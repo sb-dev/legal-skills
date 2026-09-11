@@ -1,8 +1,8 @@
 # Legal Skills — New Project Bootstrap Process
 
 **Status:** Bootstrap specification  
-**Version:** 1.1  
-**Date:** 8 September 2026
+**Version:** 1.2  
+**Date:** 12 September 2026
 
 ## 1. Purpose
 
@@ -43,6 +43,7 @@ Use the current Production Skills bootstrap and family contracts as canonical:
 - `production-skills/docs/bootstrap/README.md`
 - `production-skills/docs/bootstrap/new-project-process.md`
 - `production-skills/docs/bootstrap/domain-research-process.md`
+- `production-skills/docs/bootstrap/extension-pack-process.md`
 - `production-skills/docs/bootstrap/shared-abstraction-process.md`
 - `production-skills/docs/specs/01-production-skills-family-system.md`
 - `production-skills/docs/specs/02-production-skills-project-contract.md`
@@ -56,20 +57,38 @@ Newer family requirements take precedence, especially:
 ```text
 bootstrap workspace before substantive research
 research logs as durable stage outputs
+Seed → Five → Challenge
+exactly five complementary foundational books
+explicit permission before supplied-book substitution
+direct-source examination and traceable extraction
+evidence-qualified domain model
 six canonical specs
 5 levels × 3 primary examples
 first-class Extension Packs
+evidence-led Extension Pack catalogue curation
+five justified books per selected Extension Pack
 pack-authoring capability
+separate pack research / implementation / evaluation status
 core-vs-pack differential evaluation
 clean external installation smoke tests
 cross-domain integration without centralising consuming-project state
 ```
+
+### v1.2 migration
+
+Version 1.2 explicitly adopts the Production Skills **Seed → Five → Challenge** domain-research process and the evidence-led Extension Pack bootstrap process.
+
+No substantive stage execution logs existed under v1.1 beyond this bootstrap specification and the research-log README, so the sequence is renumbered directly rather than introducing compatibility aliases. Existing legal-domain analysis in this specification is retained as seed evidence and input to the new stages.
+
+The migration does **not** imply that book selection, direct book examination, broader challenge research, Extension Pack research, implementation or evaluation has already occurred.
 
 ---
 
 ## 3. Initial Domain Evidence
 
 The bootstrap begins from professional legal practice and authoritative sources rather than current LLM behaviour.
+
+The sources below are **seed evidence**. They establish important legal-production risks and research questions, but they do not satisfy the five-book extraction stage or the broader challenge stage.
 
 ### AI-assisted legal work requires verification and supervision
 
@@ -170,6 +189,19 @@ material fact
 
 The conclusion must never become more certain than the facts, authority, jurisdiction or temporal analysis supporting it.
 
+For the new research model:
+
+```text
+foundational books
+→ durable legal-production methods / professional practice
+
+authoritative current sources
+→ what the law, guidance or registry evidence actually says
+  for a defined jurisdiction, matter and date
+```
+
+Books may establish durable research, reasoning, drafting, risk, legal-operations and professional-practice methods. They must not be treated as a substitute for current legislation, case law, regulator material, official registries or other authority required by a live legal matter.
+
 ---
 
 ## 4. Governing Principles
@@ -206,6 +238,12 @@ analysis valid-as-of date
 ### Legal research and judgement remain distinguishable
 
 Separate what an authority says, known facts, assumptions, derived propositions, application, uncertainty, risk, recommended action and specialist judgement.
+
+### Books inform method; authority governs legal propositions
+
+A foundational book may explain legal reasoning, professional practice or even substantive doctrine. That does not make the book authoritative evidence that a proposition currently applies to a particular matter.
+
+Material substantive-law propositions must still be resolved against appropriate current authority and matter context.
 
 ### The document must match the product
 
@@ -267,58 +305,64 @@ PROJECT IDEA
     ↓
 1. Define Project Goal, Users and Professional Boundary
     ↓
-2. Research Professional Legal Practice
+2. Select Complementary Five-Book Legal Corpus
     ↓
-3. Define Jurisdiction, Authority and Temporal-Validity Model
+3. Extract and Reconcile Five-Book Corpus
     ↓
-4. Define Matter, Fact, Issue and Legal-Reasoning Artifacts
+4. Challenge and Extend Through Professional Legal Practice
     ↓
-5. Map Legal Research, Advice, Drafting and Review Workflows
+5. Define Jurisdiction, Authority and Temporal-Validity Model
     ↓
-6. Define Project-to-Law Traceability and Change Impact
+6. Define Matter, Fact, Issue and Legal-Reasoning Artifacts
     ↓
-7. Define Risk, Uncertainty, Escalation and Human Review
+7. Map Legal Research, Advice, Drafting and Review Workflows
     ↓
-8. Define Confidentiality, Privilege and Sensitive-Data Handling
+8. Define Project-to-Law Traceability and Change Impact
     ↓
-9. Research Legal AI Skills, Databases, Registries and Tools
+9. Define Risk, Uncertainty, Escalation and Human Review
     ↓
-10. Choose Execution Layer
+10. Define Confidentiality, Privilege and Sensitive-Data Handling
     ↓
-11. Gap Analysis + Over-Engineering Guardrails
+11. Research Legal AI Skills, Databases, Registries and Tools
     ↓
-12. Design Core Skills and Commands
+12. Choose Execution Layer
     ↓
-13. Design Extension Packs and Pack Authoring
+13. Gap Analysis + Over-Engineering Guardrails
     ↓
-14. Design Progressive Examples
+14. Design Core Skills and Commands
     ↓
-15. Design Kakeibo + Worldstack Canonical Stress Tests
+15. Design Extension Pack Catalogue, Research and Pack Authoring
     ↓
-16. Design Evals, Benchmarks and Regression Fixtures
+16. Design Progressive Examples
     ↓
-17. Generate Six Canonical Specs
+17. Design Kakeibo + Worldstack Canonical Stress Tests
     ↓
-18. Design Public README
+18. Design Evals, Benchmarks and Regression Fixtures
     ↓
-19. Cross-Project Review
+19. Generate Six Canonical Specs
     ↓
-20. Scaffold Production Repository
+20. Design Public README
     ↓
-21. Configure Skill Installation
+21. Cross-Project Review
     ↓
-22. Local Validation
+22. Scaffold Production Repository
     ↓
-23. Publish + Clean External Install Smoke Test
+23. Configure Skill Installation
     ↓
-24. Optional Pactwright Integration + Registry Promotion
+24. Local Validation
     ↓
-25. Review Shared-Abstraction Candidates
+25. Publish + Clean External Install Smoke Test
+    ↓
+26. Optional Pactwright Integration + Registry Promotion
+    ↓
+27. Review Shared-Abstraction Candidates
     ↓
 READY FOR IMPLEMENTATION / MATURITY PROGRESSION
 ```
 
-The Stage 0 repository is a **bootstrap workspace**, not the production scaffold created at Stage 20.
+The Stage 0 repository is a **bootstrap workspace**, not the production scaffold created at Stage 22.
+
+Stages 2, 3 and 4 are separate completion gates. Do not collapse corpus selection, direct-source extraction and broader challenge merely to progress faster.
 
 ---
 
@@ -361,15 +405,29 @@ unless genuinely required by bootstrap research itself.
 
 Every substantive later stage should persist detailed findings before the next stage begins. Conversation should carry summaries, decisions and corrections; the repository should carry the durable evidence, matrices, alternatives and architecture analysis later stages must consume.
 
+Treat each stage as a standalone task. Read the required prior logs, complete the substantive work, check the exit criteria and commit the detailed research log before dependent work proceeds.
+
 Suggested stage-log pattern:
 
 ```text
 docs/research-logs/
 ├── 2026-09-08-legal-skills-new-project-bootstrap-process.md
 ├── YYYY-MM-DD-stage-01-domain-boundary.md
-├── YYYY-MM-DD-stage-02-professional-practice.md
-├── YYYY-MM-DD-stage-03-jurisdiction-authority-temporal-model.md
+├── YYYY-MM-DD-stage-02-five-book-corpus-selection.md
+├── YYYY-MM-DD-stage-03-five-book-extraction.md
+├── YYYY-MM-DD-stage-04-professional-practice-challenge.md
+├── YYYY-MM-DD-stage-05-jurisdiction-authority-temporal-model.md
 └── ...
+```
+
+Later Extension Pack research should also use durable per-pack logs rather than being hidden inside the catalogue specification, for example:
+
+```text
+YYYY-MM-DD-extension-pack-catalogue-selection.md
+YYYY-MM-DD-pack-privacy-01-specialisation.md
+YYYY-MM-DD-pack-privacy-02-five-book-selection.md
+YYYY-MM-DD-pack-privacy-03-extraction.md
+YYYY-MM-DD-pack-privacy-04-challenge.md
 ```
 
 Creating this repository does **not** make `legal-skills` `scaffolded` in the family registry.
@@ -416,7 +474,131 @@ Persist the project charter, professional-boundary map, intended-user map, juris
 
 ---
 
-# 8. Stage 2 — Research Professional Legal Practice
+# 8. Stage 2 — Select the Complementary Five-Book Legal Corpus
+
+Use Stage 1 as the seed and conduct only enough additional reconnaissance to map the reusable legal-production knowledge required by the project.
+
+The coverage map should address the actual boundary rather than forcing fixed book roles. Candidate dimensions may include:
+
+```text
+legal scoping and issue spotting
+legal research methods and source hierarchy
+legal reasoning / applicability
+transactional drafting and review
+legal risk and professional judgement
+legal operations / product counsel practice
+requirement traceability and change impact
+specialist escalation and human review
+```
+
+These are coverage dimensions, not mandatory one-book-per-topic slots.
+
+## Corpus-selection contract
+
+Select **exactly five distinct foundational books**. Research a broader candidate pool and choose the set whose combined contribution best supports the legal-production boundary.
+
+Assess:
+
+```text
+relevance to owned legal-production responsibilities
+complementary coverage and depth
+practical workflow / decision contribution
+credibility and limitations
+contrasting or critical perspective
+currency vs durability of the material
+source accessibility
+```
+
+Provided books remain in the corpus unless the user explicitly approves removal, replacement or demotion. If overlap materially weakens the corpus, propose the exact substitution, explain the gain and loss, and wait for permission. Silence is not approval.
+
+If more than five books are supplied, propose the foundational five and ask permission before excluding the others from that foundational corpus. Supplementary books may still be used later.
+
+Five books are a research foundation, not a five-source limit and not a skill count.
+
+For each selected book record:
+
+```text
+title / author
+edition / publication year
+provided or selected origin
+source location or non-public source identifier
+access status
+intended contribution
+material actually examined
+reading limitations
+```
+
+Use access statuses such as:
+
+```text
+full text available
+relevant excerpts available
+secondary material only
+unavailable
+```
+
+Selection may finish with explicit source-access needs, but those needs must be resolved before extraction can be completed.
+
+**Research-log output:** legal-production coverage map, candidate comparison, five-book corpus, source-access register, supplied/retained/added/substituted status, approval decisions, rejected alternatives and remaining gaps.
+
+**Exit:** exactly five books are selected, required substitution decisions are resolved, and source-access needs and remaining knowledge gaps are explicit.
+
+---
+
+# 9. Stage 3 — Extract and Reconcile the Five-Book Corpus
+
+Meaningfully examine all five books for their intended contributions. A bibliography, publisher description, secondary summary or model memory is not direct-source extraction.
+
+For each material finding capture:
+
+```text
+book / edition / chapter, section, page or stable location
+problem addressed
+independently expressed principle / method / heuristic
+assumptions and applicability
+production responsibility affected
+workflow or decision implication
+relevant evaluation evidence or metric
+failure / misuse conditions
+repair implication
+overlap / support / conflict with other sources
+disposition: retain / merge / adapt / qualify / reject / research further
+```
+
+Map findings through production behaviour rather than book summaries:
+
+```text
+source finding
+→ provisional legal-production capability
+→ workflow / command implication
+→ evaluation criterion
+→ candidate benchmark case
+```
+
+Do not create one skill per book or force every selected source to produce a core rule. A book may contribute little after direct examination; record that honestly.
+
+Reconcile overlap without erasing meaningful differences. Conflicting methods may apply in different contexts or may remain unresolved.
+
+### Legal-specific evidence rule
+
+A legal book explaining doctrine, precedent or regulation is not itself authoritative evidence that the proposition currently applies to a particular matter.
+
+Book-derived substantive-law claims become research questions for Stage 4 and later matter execution. They must be checked against appropriate current authority, jurisdiction and temporal context before they can support live legal conclusions.
+
+**Research-log output:** per-book findings, examined-source locations, reading coverage, source-to-capability matrix, overlap/conflict analysis and provisional legal-production capability model.
+
+**Exit:** all five books have been meaningfully examined for their contributions; material findings are traceable; limitations, conflicts and unresolved claims remain explicit.
+
+---
+
+# 10. Stage 4 — Challenge and Extend Through Professional Legal Practice
+
+Use the provisional capability model to guide research, but independently revisit the original legal-production boundary so that important responsibilities absent from the books are still investigated.
+
+This stage must answer both questions:
+
+1. Which book-derived legal-production methods are defensible, under what conditions and with what limits?
+2. Which important professional responsibilities, risks or practices are missing from the five-book corpus?
 
 Study complementary practices rather than forcing one universal workflow:
 
@@ -438,6 +620,19 @@ regulatory compliance / controls
 
 For each stream capture roles, professional duties, matter intake, fact gathering, issue spotting, jurisdiction analysis, source hierarchy, research method, drafting/review, filing/registration boundaries, risk communication, handoffs, change monitoring, failure modes and repair strategies.
 
+Seek:
+
+```text
+supporting evidence
+contrary evidence
+alternative professional methods
+failure cases
+jurisdictional limitations
+current authoritative law / guidance where relevant
+changes since foundational books were published
+areas requiring specialist judgement
+```
+
 Key questions include:
 
 - How are facts separated from assumptions and legal conclusions?
@@ -448,13 +643,27 @@ Key questions include:
 - When must specialist counsel or a regulated professional take over?
 - How do confidentiality and privilege constrain tools?
 
-Persist professional-practice research, a practice comparison matrix, terminology glossary, failure taxonomy and candidate quality dimensions.
+Prefer evidence appropriate to the claim. Books can support professional-method research; current legal propositions require suitable current authoritative sources. Distinguish independent evidence from sources merely repeating the same underlying claim.
 
-**Exit:** the production model is grounded in legal practice rather than chat patterns or template websites.
+Classify material findings by both disposition and evidential standing:
+
+```text
+retain / merge / adapt / qualify / reject / investigate further
+
+supported finding
+context-dependent method
+practical heuristic
+disputed claim
+unresolved question
+```
+
+Persist professional-practice research, a practice comparison matrix, terminology glossary, failure taxonomy, challenge findings, missing-capability analysis and candidate quality dimensions.
+
+**Exit:** an evidence-qualified legal-production model exists, book-derived claims have been challenged, important gaps are addressed or explicitly bounded, and unresolved claims are not promoted to unconditional core rules.
 
 ---
 
-# 9. Stage 3 — Define Jurisdiction, Authority and Temporal-Validity Model
+# 11. Stage 5 — Define Jurisdiction, Authority and Temporal-Validity Model
 
 Model the smallest useful jurisdiction context, authority record and temporal-validity contract.
 
@@ -511,7 +720,7 @@ current source ≠ current law automatically
 
 ---
 
-# 10. Stage 4 — Define Matter, Fact, Issue and Legal-Reasoning Artifacts
+# 12. Stage 6 — Define Matter, Fact, Issue and Legal-Reasoning Artifacts
 
 Define minimal durable artefacts for:
 
@@ -546,7 +755,7 @@ Avoid a universal legal knowledge graph unless implementation evidence later pro
 
 ---
 
-# 11. Stage 5 — Map Legal Research, Advice, Drafting and Review Workflows
+# 13. Stage 7 — Map Legal Research, Advice, Drafting and Review Workflows
 
 Validate at least these workflow families.
 
@@ -630,7 +839,7 @@ data-flow inventory
 
 ---
 
-# 12. Stage 6 — Define Project-to-Law Traceability and Change Impact
+# 14. Stage 8 — Define Project-to-Law Traceability and Change Impact
 
 Support both directions:
 
@@ -662,7 +871,7 @@ When Pactwright is present, Legal Skills should supply legal requirements, const
 
 ---
 
-# 13. Stage 7 — Define Risk, Uncertainty, Escalation and Human Review
+# 15. Stage 9 — Define Risk, Uncertainty, Escalation and Human Review
 
 Do not use a single numeric legal-risk score by default.
 
@@ -700,7 +909,7 @@ Research escalation triggers including reserved activity/representation, materia
 
 ---
 
-# 14. Stage 8 — Define Confidentiality, Privilege and Sensitive-Data Handling
+# 16. Stage 10 — Define Confidentiality, Privilege and Sensitive-Data Handling
 
 Research confidentiality, privilege, personal data, commercial secrets, security-sensitive information, provider retention/training, connector access, logs, prompt/output storage, local/private execution, redaction, minimisation and retention/deletion.
 
@@ -724,7 +933,7 @@ The workflow must be able to select public research, redaction, approved private
 
 ---
 
-# 15. Stage 9 — Research Legal AI Skills, Databases, Registries and Tools
+# 17. Stage 11 — Research Legal AI Skills, Databases, Registries and Tools
 
 Research existing capability before implementing native infrastructure:
 
@@ -753,7 +962,7 @@ Evaluate jurisdiction coverage, authority coverage, currency, citation behaviour
 
 ---
 
-# 16. Stage 10 — Choose the Execution Layer
+# 18. Stage 12 — Choose the Execution Layer
 
 Legal Skills should own:
 
@@ -781,7 +990,7 @@ Do not build a universal legal database, registry mirror or provider framework.
 
 ---
 
-# 17. Stage 11 — Gap Analysis and Over-Engineering Guardrails
+# 19. Stage 13 — Gap Analysis and Over-Engineering Guardrails
 
 Classify required capabilities as:
 
@@ -816,7 +1025,7 @@ multi-agent law-firm simulation
 
 ---
 
-# 18. Stage 12 — Design Core Skills and Commands
+# 20. Stage 14 — Design Core Skills and Commands
 
 Lean hypothesis to validate:
 
@@ -879,21 +1088,39 @@ Do not create one skill per area of law by default. Split only when a capability
 
 ---
 
-# 19. Stage 13 — Design Extension Packs and Pack Authoring
+# 21. Stage 15 — Design Extension Pack Catalogue, Research and Pack Authoring
 
-## Jurisdiction is context, not a normal Extension Pack
+Apply `production-skills/docs/bootstrap/extension-pack-process.md`.
 
-Do not model ordinary operation as:
+This stage has two responsibilities:
+
+1. curate a complementary Legal Skills Extension Pack catalogue;
+2. define and schedule the per-pack evidence process for selected specialisations.
+
+## 21.1 Catalogue curation
+
+Do not begin from a fixed list of areas of law. Research or generate a broader candidate pool and assess combined coverage, reuse, distinct production behaviour, evaluation feasibility and overlap with the core and neighbouring packs.
+
+Classify each need:
 
 ```text
-legal-skills + uk-law-pack
-legal-skills + eu-law-pack
-legal-skills + us-law-pack
+existing pack covers it
+→ reuse
+
+one-project detail
+→ project instructions
+
+broadly applicable Legal Skills responsibility
+→ core-improvement candidate
+
+reusable specialised production behaviour
+→ Extension Pack candidate
+
+insufficient value or evidence
+→ defer / reject
 ```
 
-Every run must resolve jurisdiction and current authority as matter context. Jurisdiction-specific references/source profiles may exist internally, but a pack should represent a reusable **matter specialisation that materially changes production behaviour**.
-
-Candidate pack families to research:
+Candidate specialisations worth researching include:
 
 ```text
 privacy-data-protection
@@ -907,7 +1134,85 @@ ai-and-automated-systems
 commercial-contracts
 ```
 
-A valid pack may alter issue spotting, specialist source ecology, required facts, artefacts, research questions, drafting grammar, review/escalation thresholds, product-consistency tests and evaluation criteria.
+These are candidates, not a required catalogue.
+
+Catalogue size follows useful complementary coverage rather than symmetry, book count or a desire to represent every legal field.
+
+## 21.2 Jurisdiction is execution context, not a normal Extension Pack
+
+Do not model ordinary operation as:
+
+```text
+legal-skills + uk-law-pack
+legal-skills + eu-law-pack
+legal-skills + us-law-pack
+```
+
+Every run must resolve jurisdiction and current authority as matter context. Jurisdiction-specific references/source profiles may exist internally, but a pack should represent a reusable **matter specialisation that materially changes production behaviour**.
+
+A privacy specialisation may have jurisdiction-sensitive behaviour, but:
+
+```text
+privacy specialisation
+≠ jurisdiction itself
+```
+
+## 21.3 Per-pack research process
+
+Every selected pack follows:
+
+```text
+P1 define specialisation + core baseline
+P2 select five complementary books
+P3 extract and reconcile
+P4 challenge claims and research gaps
+P5 specify specialised behaviour + evaluation
+P6 implement and demonstrate
+P7 evaluate, clean-install and catalogue
+```
+
+Each pack has **exactly five justified foundational books**, but those books need not be unique to that pack. Existing directly examined domain or pack research may be reused after checking source evidence, reading scope and applicability.
+
+There is no requirement for five new books per pack and no permission to copy the core corpus into every pack without a contribution assessment.
+
+User-supplied pack books retain the same permission rules as the domain corpus: removal, replacement or demotion requires explicit approval.
+
+For Legal Skills, preserve the distinction:
+
+```text
+foundational books
+→ methods / analytical frameworks / professional practice
+
+current authoritative sources
+→ current law / regulatory requirement / official interpretation
+
+specialist commentary
+→ context / dispute / interpretation
+
+pack behaviour
+→ reusable specialist production guidance
+
+matter execution
+→ re-resolve current jurisdiction + authority
+```
+
+A pack must not bake a 2026 regulator conclusion into timeless behaviour. It should encode durable methods for resolving the live authority and applying it to matter facts.
+
+## 21.4 Pack behaviour and evidence
+
+A valid pack may alter:
+
+```text
+specialist issue spotting
+source ecology
+required facts
+artefacts
+research questions
+drafting grammar
+review / escalation thresholds
+product-consistency tests
+evaluation criteria
+```
 
 Precedence must respect applicable authority:
 
@@ -919,27 +1224,88 @@ verified applicable law / authority
 → core Legal Skills defaults
 ```
 
-Pack authoring should follow:
+Map evidence into testable production behaviour:
+
+```text
+source finding
+→ applicability to specialisation
+→ changed core-skill decision
+→ observable workflow / artefact effect
+→ evaluation criterion
+→ failure + repair case
+```
+
+Before implementation, define falsifiable acceptance cases and a realistic showcase with an exact prompt plus a distinct reuse brief/fixture.
+
+Core-vs-pack comparison must use the same substantive brief, constraints and comparable execution conditions. Do not make the packed run appear superior by giving it a richer task description.
+
+## 21.5 Catalogue evidence contract
+
+Future `06-legal-skills-extension-pack-catalogue.md` entries should identify:
+
+```text
+identity and intended use / non-use
+selection rationale and complementary catalogue contribution
+core baseline and specialised behavioural difference
+five-book corpus + contribution of each book
+research-log references
+source-access / reading limitations
+current-authority requirements
+hard constraints vs qualified methods
+relevant core-skill effects
+showcase + exact generation prompt
+actual outputs when available
+specific acceptance cases
+comparative evaluation evidence
+research status
+implementation status
+evaluation status
+clean-install evidence
+limitations / unresolved questions
+compatibility / migration notes
+```
+
+Do not equate a listed catalogue entry, bibliography, pack directory or showcase prompt with demonstrated quality.
+
+A ready-to-use pack requires actual implementation, production, evaluation and clean consumer-project installation evidence.
+
+## 21.6 Pack authoring
+
+The legal pack-authoring capability should first decide:
+
+```text
+Does an existing pack already solve this?
+Is this actually a core capability?
+Is this only project-specific?
+Is there enough evidence for a reusable specialisation?
+```
+
+Then, where justified:
 
 ```text
 inspect catalogue
-→ justify reusable specialisation
-→ research specialist practice
+→ define specialisation + baseline
+→ research five-book foundation
+→ challenge through current specialist evidence
 → define source ecology + jurisdiction interaction
-→ define required facts / artifacts
+→ define required facts / artefacts
 → define changed core behaviour
 → define escalation boundaries
 → define pack-aware evals
 → create showcase + exact prompt
 → compare core vs core+pack
-→ validate / catalogue
+→ validate / clean-install / catalogue
 ```
 
-**Exit:** a legal pack is demonstrably different from a jurisdiction label, project brief or generic legal prompt.
+Do not create a second legal workflow engine, one skill per legal field or a universal pack interpreter.
+
+**Research-log output:** Extension Pack candidate pool, coverage matrix, selection rationale, selected/rejected dispositions, migration needs and explicit per-pack P1–P7 research plans. Later P2–P4 work is committed separately for each pack.
+
+**Exit:** selected pack candidates have justified complementary production value; core/project-instruction alternatives are assessed; jurisdiction remains context rather than pack identity; and every selected pack has an explicit evidence path rather than only a profile name.
 
 ---
 
-# 20. Stage 14 — Design Progressive Examples
+# 22. Stage 16 — Design Progressive Examples
 
 Target:
 
@@ -979,7 +1345,7 @@ Every primary example must contain its complete copyable prompt.
 
 ---
 
-# 21. Stage 15 — Design Kakeibo and Worldstack Canonical Stress Tests
+# 23. Stage 17 — Design Kakeibo and Worldstack Canonical Stress Tests
 
 These are deliberately different consuming-project fixtures. Their project-specific conclusions remain in those projects.
 
@@ -1047,7 +1413,7 @@ Worldstack
 
 ---
 
-# 22. Stage 16 — Design Evals, Benchmarks and Regression Fixtures
+# 24. Stage 18 — Design Evals, Benchmarks and Regression Fixtures
 
 Separate evaluation layers.
 
@@ -1096,9 +1462,33 @@ Sensitive fixtures should trigger correct redaction, approved private/local exec
 
 Test that one wrong fact, stale authority, defective clause or inconsistent implementation can be repaired without regenerating unaffected verified legal work.
 
+### Five-book research integrity
+
+Test/bootstrap-review failures should include:
+
+```text
+reading list presented as completed research
+book summary presented as direct examination
+book treated as current legal authority
+supplied book silently replaced or demoted
+five books mechanically converted into five skills
+book-derived claim promoted without challenge
+```
+
 ### Extension Packs
 
 Test activation, non-activation, precedence, specialist issue spotting/source selection, jurisdiction interaction, changed review criteria and core-vs-pack differential behaviour.
+
+Pack-specific regressions should also detect:
+
+```text
+jurisdiction represented as a normal pack identity
+catalogue entry presented as implemented capability
+showcase prompt presented as production evidence
+five pack books inherited without contribution analysis
+current regulator conclusion embedded as timeless pack behaviour
+pack-specific method hiding a core legal defect
+```
 
 ### End to end
 
@@ -1106,11 +1496,11 @@ Use progressive examples plus Kakeibo and Worldstack stress-test slices.
 
 Priority adversarial regressions include fabricated authority, wrong-proposition citation, stale guidance, law-before-commencement, wrong jurisdiction, template assumptions, exact-match-only trade mark search, wrong licence version, confidential material routed through unsuitable tools, false certainty and generic escalation.
 
-**Exit:** authority, reasoning, drafting and implementation-consistency failures can fail independently.
+**Exit:** authority, reasoning, drafting, implementation-consistency and evidence-process failures can fail independently.
 
 ---
 
-# 23. Stage 17 — Generate Six Canonical Specifications
+# 25. Stage 19 — Generate Six Canonical Specifications
 
 Generate:
 
@@ -1129,9 +1519,9 @@ Responsibilities:
 1. **System:** mission, boundaries, principles, core skills, authority/jurisdiction strategy, execution, confidentiality, human review, build order.
 2. **Workflows and Artifacts:** matter intake, facts, issues, authorities, research, advice, drafting/review, requirements, traceability, change impact, uncertainty, escalation and repair.
 3. **Repository and Contracts:** structure, SKILL.md/command contracts, self-containment, references/scripts/evals, installation, CI and confidentiality-sensitive execution notes.
-4. **Testing and Benchmark:** authority/citation validation, temporal validity, reasoning, drafting/review, product consistency, trade mark/licence evaluation, progressive examples, stress tests, packs and regressions.
-5. **Customisation / Extension Packs:** pack model, jurisdiction-vs-pack distinction, activation/precedence, specialist sources/artifacts, core effects, evaluation, packaging and authoring.
-6. **Catalogue:** curated packs, production profiles, jurisdiction interactions, showcases, exact prompts, pack-specific evals and maturity.
+4. **Testing and Benchmark:** authority/citation validation, temporal validity, reasoning, drafting/review, product consistency, trade mark/licence evaluation, five-book evidence-process checks, progressive examples, stress tests, packs and regressions.
+5. **Customisation / Extension Packs:** pack model, jurisdiction-vs-pack distinction, activation/precedence, evidence-led pack research, specialist sources/artifacts, core effects, evaluation, packaging and authoring.
+6. **Catalogue:** curated packs, selection rationale, core-vs-specialised difference, five-book foundations, research records, jurisdiction interactions, showcases, exact prompts, actual outputs when available, pack-specific evals, clean-install evidence, limitations and separate research/implementation/evaluation status.
 
 Generate these specs from persisted research logs rather than reconstructing decisions from conversation history.
 
@@ -1139,7 +1529,7 @@ Generate these specs from persisted research logs rather than reconstructing dec
 
 ---
 
-# 24. Stage 18 — Design Public README
+# 26. Stage 20 — Design Public README
 
 Follow the proven family README structure, adapted to legal production:
 
@@ -1174,7 +1564,7 @@ Do not claim autonomous legal representation or generic compliance certification
 
 ---
 
-# 25. Stage 19 — Cross-Project Review
+# 27. Stage 21 — Cross-Project Review
 
 Compare the independently derived legal model with Deep Research, Software Engineering, UI/UX, Game Development and mature creative Production Skills.
 
@@ -1196,7 +1586,7 @@ Apply the family extraction rule: share only after multiple independent domains 
 
 ---
 
-# 26. Stage 20 — Scaffold Production Repository
+# 28. Stage 22 — Scaffold Production Repository
 
 Only now expand the Stage 0 workspace into the production scaffold justified by the six specs.
 
@@ -1234,31 +1624,36 @@ This is the point at which `scaffolded` maturity may become appropriate if the f
 
 ---
 
-# 27. Stages 21–23 — Installation and Validation
+# 29. Stages 23–25 — Installation and Validation
 
-## Stage 21 — Configure Skill Installation
+## Stage 23 — Configure Skill Installation
 
 Validate Agent Skills installation and selective installation. The provisional names remain:
 
 ```bash
-npx skills add sb-dev/legal-skills   --skill legal-production   --skill legal-evaluate   --agent claude-code
+npx skills add sb-dev/legal-skills \
+  --skill legal-production \
+  --skill legal-evaluate \
+  --agent claude-code
 ```
 
 Installation success must not imply that the selected AI/provider is suitable for every legal matter; preserve the confidentiality/tool-eligibility model.
 
-## Stage 22 — Local Validation
+## Stage 24 — Local Validation
 
 Validate repository contracts, skill/command discovery, references, authority/artifact validators, benchmark fixtures, Extension Packs when implemented, prompt completeness, stress-test integrity and README claims.
 
-## Stage 23 — Clean External Install Smoke Test
+## Stage 25 — Clean External Install Smoke Test
 
 From a clean consumer project, install from GitHub, run a bounded Level 1 task, verify matter/authority/output artifacts, run independent evaluation, test selective install, verify jurisdiction/valid-as-of metadata and confirm there are no source-checkout-relative dependencies.
+
+For implemented Extension Packs, also verify self-contained installation/use without requiring original books, research logs or another pack at runtime.
 
 **Exit:** Legal Skills behaves as an installable Agent Skills product rather than a source-repository-only workflow.
 
 ---
 
-# 28. Stage 24 — Optional Pactwright Integration and Registry Promotion
+# 30. Stage 26 — Optional Pactwright Integration and Registry Promotion
 
 If useful, add:
 
@@ -1296,9 +1691,11 @@ proposed
 
 Repository creation alone does not promote maturity. `working` requires an installed end-to-end legal-production example using verified authority. `benchmarked` requires meaningful authority/reasoning/drafting/product-consistency regressions. `mature` requires the family contract, progressive examples, packs, pack authoring, benchmark coverage, Kakeibo and Worldstack stress-test programmes and clean external installation.
 
+Completing a five-book bibliography or listing Extension Packs does not by itself advance maturity.
+
 ---
 
-# 29. Stage 25 — Review Shared-Abstraction Candidates
+# 31. Stage 27 — Review Shared-Abstraction Candidates
 
 After implementation evidence exists, apply `shared-abstraction-process.md`.
 
@@ -1316,9 +1713,23 @@ Do not centrally promote a legal runtime, legal knowledge database, universal ju
 
 ---
 
-# 30. Legal-Specific Acceptance Gates
+# 32. Legal-Specific Acceptance Gates
 
 Before `legal-skills` can be considered mature, demonstrate:
+
+### Domain research foundation
+
+- a legal-production knowledge-coverage map exists;
+- exactly five complementary foundational books are selected;
+- supplied-book substitutions have explicit approval evidence where applicable;
+- source access and actual reading coverage are recorded separately;
+- all five books have been meaningfully examined for their intended contributions;
+- per-book findings are traceable to identifiable source locations;
+- a source-to-capability matrix and overlap/conflict analysis exist;
+- book-derived substantive-law claims are not treated as current legal authority;
+- professional-practice challenge research includes supporting and contrary evidence;
+- important knowledge gaps absent from the books are investigated;
+- the resulting domain model distinguishes supported findings, qualified methods, heuristics and unresolved claims.
 
 ### Research and analysis
 
@@ -1357,6 +1768,21 @@ Before `legal-skills` can be considered mature, demonstrate:
 - minimisation/redaction/private/local execution can be selected;
 - public benchmarks use public or synthetic data.
 
+### Extension Pack research and catalogue
+
+- catalogue candidates were compared for complementary production coverage;
+- core capability, project instruction and pack responsibilities are distinguished;
+- jurisdiction remains matter context rather than a default pack taxonomy;
+- every researched selected pack has a five-book corpus with justified per-book contribution;
+- reused book evidence includes pack-specific applicability review;
+- per-pack extraction maps source findings to changed core behaviour and evaluation;
+- current authoritative sources are re-resolved where the specialised legal matter requires them;
+- pack guidance does not freeze dated regulator conclusions as timeless rules;
+- each catalogue entry separates research, implementation and evaluation status;
+- showcase prompts are not represented as successful production evidence without actual outputs;
+- core-vs-pack comparisons use equivalent substantive briefs;
+- ready packs have clean consumer-project installation evidence.
+
 ### Evaluation and product behaviour
 
 - fabricated authority, stale authority, wrong jurisdiction and unsupported reasoning can fail independently;
@@ -1373,9 +1799,23 @@ Before `legal-skills` can be considered mature, demonstrate:
 - professional boundaries are explicit;
 - local and clean external installation pass.
 
+### Evidence-process anti-patterns
+
+The following must fail review rather than count as completion evidence:
+
+```text
+a reading list presented as completed research
+books treated as current legal authority
+supplied books silently replaced or demoted
+five books mechanically converted into five skills
+jurisdictions mechanically converted into Extension Packs
+catalogue entries presented as implemented packs without implementation evidence
+pack showcase prompts presented as production evidence without actual outputs
+```
+
 ---
 
-# 31. Initial Non-Goals
+# 33. Initial Non-Goals
 
 Until evidence proves otherwise, `legal-skills` is not:
 
@@ -1394,7 +1834,7 @@ Until evidence proves otherwise, `legal-skills` is not:
 
 ---
 
-# 32. Success Criterion
+# 34. Success Criterion
 
 This bootstrap succeeds if later sessions can execute each stage from persisted research logs without redesigning `legal-skills` from first principles.
 
@@ -1409,6 +1849,7 @@ more explicit about uncertainty
 more consistent with actual product behaviour
 more capable of translating law into production constraints
 more resistant to fabricated or stale authority
+more evidence-qualified at both core-domain and Extension Pack level
 more efficient to review and repair
 more precise about when specialist counsel is required
 ```
