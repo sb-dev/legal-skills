@@ -1,7 +1,7 @@
 # Stage 02: Complementary five-book corpus selection
 
-**Status:** Complete for Stage 2; source access remains insufficient for Stage 3 extraction  
-**Version:** 1.0  
+**Status:** Complete for Stage 2; supplied sources recorded, Stage 3 access gaps remain  
+**Version:** 1.1  
 **Date:** 13 September 2026  
 **Bootstrap:** [Legal Skills bootstrap v1.2, Stage 2](2026-09-08-legal-skills-new-project-bootstrap-process.md#8-stage-2--select-the-complementary-five-book-legal-corpus)  
 **Input:** [Stage 01: Project charter and legal-production boundary](2026-09-12-stage-01-domain-boundary.md)  
@@ -17,13 +17,15 @@ Select these five distinct foundational works:
 4. **The Legal Risk Management Handbook: An International Guide to Protect Your Business from Legal Loss** — Matthew Whalley and Chris Guzelian, 1st edition, 2016.
 5. **In-House Lawyers' Ethics: Institutional Logics, Legal Risk and the Tournament of Influence** — Richard Moorhead, Steven Vaughan and Cristina Godinho, first edition, originally 2018; 2021 paperback identified below.
 
-The set combines practical legal methods, a deeper account of reasoning, transactional production, organisational risk practice and an empirical critical perspective. Selection follows comparison with three additional books. It does not allocate one skill to each book or settle the eventual capability architecture.
+The set combines practical legal methods, a deeper account of reasoning, transactional production, organisational risk practice and an empirical critical perspective. The original selection followed comparison with three additional books. It does not allocate one skill to each book or settle the eventual capability architecture.
+
+**Supplied-source update:** The user subsequently supplied eight files representing these five works and three complementary works. All are retained. The [source-intake addendum](2026-09-13-stage-02-supplied-source-intake.md) records the files, editions, contributions and summary limitations. The foundational five remain selected; Adams, the practitioner research handbook and the Oxford law-and-management handbook are supplied complements. Sections 6 and 8 below reflect current access and provenance.
 
 The execution baseline is the Stage 1 commit, [`3c514e2`](https://github.com/sb-dev/legal-skills/commit/3c514e27428b962ef312c90fed99eff219d5ce33). The governing [Production Skills domain research process](https://github.com/sb-dev/production-skills/blob/20979e0c68ac4b37433374df7fe10ceb2e7ee69a/docs/bootstrap/domain-research-process.md) was re-examined at revision `20979e0c68ac4b37433374df7fe10ceb2e7ee69a`; its separation of selection, direct examination and wider challenge remains applicable. No corpus is imported from another branch.
 
-This stage examined bibliographic records, publisher descriptions, contents pages, limited book front matter or chapter openings, and one author-written companion article. These support a **selection judgement**, not extracted production rules. Descriptions of intended usefulness, comparative advantages and gaps below are project assessments from that bounded evidence. They remain subject to direct examination in Stage 3. No selected book has yet been meaningfully examined across its intended contribution.
+The original selection examined bibliographic records, publisher descriptions, contents pages, limited book front matter or chapter openings, and one author-written companion article. Subsequent intake checked the supplied files and relevant publisher records as detailed in the addendum. These support a **selection and intake judgement**, not extracted production rules. Descriptions of intended usefulness, comparative advantages and gaps below are project assessments from that bounded evidence. They remain subject to direct examination in Stage 3. No selected book has yet been meaningfully examined across its intended contribution.
 
-No books were supplied as mandatory inputs in the current request or Stage 1 record. All five are additions. There is no removal, replacement or demotion of a supplied book requiring approval.
+No books were supplied at the original selection. All five foundational choices were selected additions. The later request expressly adds complementary sources, so retaining the three additional works in that role requires no exclusion or substitution decision. No supplied work is removed or demoted.
 
 ## 2. Coverage map derived from Stage 1
 
@@ -45,7 +47,7 @@ These dimensions overlap. None requires a dedicated book slot. The map deliberat
 
 ## 3. Candidate comparison
 
-The comparison is qualitative. No numerical scores or coverage percentages are inferred from contents pages. Publication details and access observations were checked on 13 September 2026. The evidence links in sections 4 and 7 identify what was actually inspected.
+The original comparison is qualitative. No numerical scores or coverage percentages are inferred from contents pages. Publication details and access observations were checked on 13 September 2026. The evidence links in sections 4 and 7 identify what was inspected for selection. The later supplied-source comparison is in the addendum; the three additions remain retained complements.
 
 | Candidate | Contribution assessed against the boundary | Main limitation or overlap | Selection decision |
 |---|---|---|---|
@@ -54,7 +56,7 @@ The comparison is qualitative. No numerical scores or coverage percentages are i
 | B3 — Stark and Llorente, *Drafting Contracts*, 3rd ed. (2024) | Connects transaction design, language, drafting process, review and amendments | Transactional and substantially US-oriented; cannot stand for all legal writing or consumer-facing documents | **Select.** Broadest production contribution among the contract-writing candidates examined. |
 | B4 — Whalley and Guzelian, *The Legal Risk Management Handbook*, 1st ed. (2016) | Connects legal issues with organisational assessment, mitigation and reporting | Corporate orientation; methods for measuring risk require challenge; substantive examples age | **Select.** Adds decision and organisational context to analysis and drafting. |
 | B5 — Moorhead, Vaughan and Godinho, *In-House Lawyers' Ethics* (2018; paperback 2021) | Empirical challenge to assumptions about independence, commercial alignment and legal risk | Study of human in-house practice; neither a workflow manual nor evidence about agent behaviour | **Select.** Provides a distinct critical perspective on how advice can be distorted. |
-| A1 — Kenneth A. Adams, *A Manual of Style for Contract Drafting*, 5th ed. (2023) | Detailed language choices and critique of inherited drafting habits | Strong complement to B3, but a narrower addition than organisational judgement within five slots | **Do not select as foundational.** Keep as a possible later precision-drafting source. |
+| A1 — Kenneth A. Adams, *A Manual of Style for Contract Drafting*, 5th ed. (2023) | Detailed language choices and critique of inherited drafting habits | Strong complement to B3, but a narrower addition than organisational judgement within five slots | **Not foundational.** The subsequently supplied fourth edition (2017) is retained as complement S1; see the addendum. |
 | A2 — David W. Tollen, *The Tech Contracts Handbook*, 3rd ed. (2021) | Practical treatment of technology agreements close to likely consumer projects | Concentrates on an agreement category; would duplicate part of B3 while narrowing the foundation | **Do not select as foundational.** Reconsider for evidenced technology-contract needs. |
 | A3 — Michelle Finneran Dennedy, Jonathan Fox and Thomas R. Finneran, *The Privacy Engineer's Manifesto*, 1st ed. (2014) | Policy-to-engineering translation, lifecycle work and verification | Strong relevance to one gap, but privacy-specific and partly in engineering's ownership | **Do not select as foundational.** Retain as a candidate for the traceability gap investigation. |
 
@@ -142,25 +144,25 @@ Questions to carry into direct examination include whether risk quantification o
 
 ## 6. Source-access register and Stage 3 entry work
 
-Access status records what was reachable in this research session, not whether a book exists for sale. **Relevant excerpts available** is qualified below by the actual extent: short openings and front matter do not meet the planned extraction need. **Secondary material only** denotes descriptive or contents-only evidence without substantive book passages, including material supplied by the publisher itself.
+Access status records the material now available after the user's uploads, not whether a book exists for sale. U identifiers below resolve to the filenames and inspection record in the [source-intake addendum](2026-09-13-stage-02-supplied-source-intake.md). **Full text available** records access, not completed examination. **Relevant excerpts available** is qualified by its actual extent. **Secondary material only** includes supplied summaries and descriptive or contents-only evidence without substantive book passages.
 
 | Book | Access status | Material actually examined | Limitation and next access action |
 |---|---|---|---|
-| B1 | **secondary material only** | OUP edition/resource page; Wildy metadata and visible contents listing | No substantive tenth-edition chapters examined. OUP resources depend on the enhanced ebook/access arrangement. Obtain a lawfully accessible copy or the relevant chapters with edition and location context; verify the incomplete listing against it. |
-| B2 | **relevant excerpts available** | JSTOR bibliographic record, contents and short chapter-opening passages | The observed session explicitly lacked institutional access. No complete chapter was examined. Obtain authorised text for the reasoning topics and their qualifications; the visible openings cannot support extraction of the book's methods. |
-| B3 | **relevant excerpts available** | Aspen metadata; public seven-page contents PDF; selected passages in the five-page preface PDF, including the current-edition overview | No substantive drafting or review chapter examined. Obtain the third-edition chapters identified above, with examples and surrounding explanation. Front matter and advertised online resources do not establish full-book access. |
-| B4 | **secondary material only** | Kogan Page metadata, description and public three-page detailed contents PDF | No sample chapter or book-body text retrieved. Obtain chapters 1–3 and enough application material to test their assumptions. A visible sample/resource label is not evidence that its content was accessed. |
-| B5 | **secondary material only** | Publisher title/author record and indexed paperback metadata; the authors' substantive companion article about the study | No book-body text examined. Publisher retrieval was intermittent, and the companion article remains a separate source. Obtain the selected work, verify its edition/front matter, and examine methods, relevant findings and limitations directly. |
+| B1 | **full text available** for supplied 3rd ed. (2011); **secondary material only** for selected 10th ed. (2025) | Original publisher/listing evidence; U08 title, copyright, contents and separated body/end samples | U08 supports direct examination of its methods, with findings cited to 2011. It does not establish access to or equivalence with the selected tenth edition. Resolve the edition basis before claiming the intended B1 contribution complete. |
+| B2 | **full text available** | Original JSTOR evidence; U07 title, copyright, contents and separated body/end samples | The supplied 2009 copy resolves direct-text access. Meaningful examination of the intended reasoning topics, examples and qualifications remains to be performed. |
+| B3 | **relevant excerpts available**, limited to public front matter; U01 is **secondary material only** | Aspen metadata, public contents and selected preface passages; supplied 19-page overview | No substantive book chapter supplied. U01's chapter numbers conflict with the third-edition contents. Obtain the actual chapters and use the verified publisher locations, not the summary's numbering. |
+| B4 | **secondary material only** | Kogan Page metadata and detailed contents; supplied 14-page overview U03 | U03 supplies questions for examination, not direct book text. Obtain chapters 1–3 and enough application material to test their assumptions and attributed methods. |
+| B5 | **secondary material only** | Publisher record, author-written companion article and supplied 15-page overview U02 | Neither article nor summary is the book. Obtain the relevant methods, findings and limitations directly; detailed summary claims remain unverified. |
 
-No selected book is presently recorded as **full text available**. No purchasing, account registration or acquisition of a licence was performed. Public source locations are recorded in section 4; no book files, extensive quotations or private access details are committed.
+Full text is now available for B2 and the supplied earlier edition of B1. The supplied fourth edition of Adams is also available as a complementary direct source. The research and management handbook additions are two-page summaries. No purchasing, account registration or acquisition of a licence was performed. Public source locations are recorded here and in the addendum; no book files, extensive quotations or private access details are committed.
 
-Stage 3 may begin by resolving access for the named works. A user-provided lawful copy, existing authorised library access, or sufficiently substantial authorised excerpts can resolve an access need. Excerpts must support the intended contribution and its limitations; there is no arbitrary page quota. Record the actual edition and stable locations when obtained. A different format of the same edition is not a sixth book; a different edition needs an explicit comparability check.
+Stage 3 can begin with the available direct material while resolving the remaining access needs. A user-provided copy, existing authorised library access, or sufficiently substantial authorised excerpts can resolve an access need. Excerpts must support the intended contribution and its limitations; there is no arbitrary page quota. Record the actual edition and stable locations. A different format of the same edition is not a sixth book; a different edition needs an explicit comparability check. The addendum identifies the differences already observed in U08.
 
-**Stage 3 cannot be marked complete until all five have been meaningfully examined.** The current previews do not satisfy that condition for any selected work. If access cannot be obtained or direct examination exposes a weak contribution, record the problem and revisit the selection explicitly. Do not substitute a different book silently or treat model memory as book evidence.
+**Stage 3 cannot be marked complete until all five have been meaningfully examined.** Intake and copy availability do not complete extraction. If remaining access cannot be obtained or direct examination exposes a weak contribution, record the problem and revisit the selection explicitly. Do not substitute a different book silently or treat a supplied summary or model memory as direct book evidence.
 
 ## 7. Alternative-source evidence and remaining gaps
 
-The rejected candidates were assessed from the following bounded evidence:
+The original non-foundational candidates were assessed from the following bounded evidence. A1's supplied fourth edition is now retained as S1; S2 and S3 are documented in the addendum.
 
 | Candidate | Evidence inspected and access observation | Currency and applicability qualification |
 |---|---|---|
@@ -172,7 +174,7 @@ The corpus does not claim to cover all substantive law relevant to the Stage 1 m
 
 | Gap or uncertainty | Why it matters | Follow-up owner in the bootstrap |
 |---|---|---|
-| Legal requirement-to-product traceability, change dependency analysis and repair | This is owned core work, yet the selected books appear to cover it only indirectly | Stage 3 must report the actual shortfall. Stage 4 should examine professional and implementation practice, with A3 a candidate supporting source. Later workflow and evaluation work must demonstrate the result. |
+| Legal requirement-to-product traceability, change dependency analysis and repair | This is owned core work, yet the selected books appear to cover it only indirectly | Stage 3 must report the actual shortfall. The supplied Oxford handbook summary and verified contents add targeted legal-design, contract-management and systems-thinking research leads (S3). Stage 4 should examine professional and implementation practice, with A3 also a candidate supporting source. Later workflow and evaluation work must demonstrate the result. |
 | Current authority, territorial scope and temporal validity | Durable research concepts cannot establish whether a proposition is currently applicable | Stage 4 primary-source and professional-practice challenge; later matter work must verify applicable authority and status. |
 | Privacy, consumer commerce, IP, open-source licensing and creative-production depth | Stage 1 includes bounded work in these fields without promising specialist competence in each | Stage 4 should identify needed authoritative and specialist sources. Later specialisation decisions need their own evidence; this selection approves no pack catalogue. |
 | Confidentiality, privilege and safe use of tools or external databases | Professional and technical handling requirements are not established by book selection | Stage 4 must examine current applicable obligations and actual tool behaviours. Later workflow design must make boundaries inspectable. |
@@ -186,15 +188,17 @@ Kakeibo and Worldstack remain possible later proving contexts, not evidence that
 
 | Decision class | Record |
 |---|---|
-| Supplied books | None in the current instruction or Stage 1 input. |
-| Retained supplied books | None applicable. |
+| Supplied books | None at original selection. Subsequently, eight files represent the five foundational works and three expressly complementary works; see the intake register. |
+| Retained supplied books | All represented works retained. Three full-length copies and five summaries are distinguished; *Legal Skills* and Adams have earlier supplied editions than those originally compared. |
 | Added foundational books | B1–B5: exactly five distinct works. |
 | Substituted, removed or demoted supplied books | None. |
-| Alternatives not selected | A1–A3, with comparative reasons and evidence above. They remain possible supplementary sources. |
+| Alternatives not selected | A1–A3 were not selected as foundational. The supplied Adams fourth edition is now retained as S1; the two new handbook additions are S2–S3. A2–A3 remain possible later sources. |
 | Approval decisions | No supplied-book exclusion or substitution requires approval; no pending approval decision prevents completion of Stage 2. |
-| Source-access needs | Outstanding for substantive examination of all five selected works; recorded per book in section 6. |
+| Source-access needs | B2 direct text available; B1 third edition available with a selected-edition gap; B3–B5 remain without substantive book text. S1 is directly available; S2–S3 are summaries. Section 6 and the addendum record the actions. |
 | Remaining knowledge gaps | Explicitly assigned to subsequent research and validation in section 7. |
 
 The Stage 2 exit is met: the boundary-derived coverage map exists, a broader candidate pool has been compared, exactly five works are selected, their origins and access limitations are recorded, and substitution decisions and remaining gaps are explicit.
 
-The next stage is **Stage 3: Extract and Reconcile the Five-Book Corpus**, beginning with source access. It must produce located, independently expressed findings with applicability, failure conditions, production implications and dispositions. This record supplies the selection and reading agenda only; extraction, reconciliation, broader challenge, implementation and evaluation remain uncompleted.
+The next stage is **Stage 3: Extract and Reconcile the Five-Book Corpus**, using available direct sources and resolving the remaining access needs. It must produce located, independently expressed findings with applicability, failure conditions, production implications and dispositions. This record and its addendum supply selection, intake and the reading agenda only; extraction, reconciliation, broader challenge, implementation and evaluation remain uncompleted.
+
+**Revision 1.1:** Records the user's eight uploads, retains three complementary works, updates access and provenance, and links edition and summary checks. The five foundational works remain selected.

@@ -26,6 +26,7 @@ The files here are research and design records. Their presence does not mean the
 |---|---|---|
 | [Bootstrap process](2026-09-08-legal-skills-new-project-bootstrap-process.md) | Specification v1.2 | Governing stage sequence and completion gates |
 | [Stage 01: Domain boundary](2026-09-12-stage-01-domain-boundary.md) | Complete | Project charter, users, matter classes, professional boundary, jurisdiction strategy, quality and review responsibilities |
-| [Stage 02: Five-book corpus selection](2026-09-13-stage-02-five-book-corpus-selection.md) | Selection complete; extraction access needs recorded | Coverage map, eight-book comparison, five foundational works, source-access register, selection decisions and remaining gaps |
+| [Stage 02: Five-book corpus selection](2026-09-13-stage-02-five-book-corpus-selection.md) | Selection complete; v1.1 access update | Coverage map, original candidate comparison, five foundational works, current source access, selection decisions and remaining gaps |
+| [Stage 02 addendum: Supplied sources](2026-09-13-stage-02-supplied-source-intake.md) | Intake complete | Eight supplied files, three complementary works, edition checks, summary limitations and updated research readiness |
 
-Stage 2 selects the corpus using the Stage 1 boundary. The next stage is Stage 3, direct extraction and reconciliation, beginning with access to substantive material from all five selected books. Later-stage research, implementation and evaluation are not implied by this index.
+Stage 2 selects the corpus using the Stage 1 boundary. The user's supplied sources are retained in the addendum. The next stage is Stage 3, direct extraction and reconciliation, using available book text while resolving the remaining access and edition gaps. Later-stage research, implementation and evaluation are not implied by this index.
