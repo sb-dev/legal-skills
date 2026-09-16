@@ -1,72 +1,203 @@
-# Bootstrap Research Tooling
+# Bootstrap Research and Execution Tooling
 
-**Status:** Active bootstrap support  
-**Date:** 14 September 2026  
+**Status:** Family-candidate prototype  
+**Created:** 14 September 2026  
+**Revised:** 16 September 2026  
 **Branch:** `feat/bootstrap-3`
 
 ## Purpose
 
-This note defines the web-research tooling used while executing the legal-skills bootstrap stages. It does not replace the bootstrap process, add a second research methodology, or make Firecrawl the default research engine.
+This branch prototypes a reusable bootstrap-support architecture for Production Skills projects while retaining legal-specific evidence rules locally.
 
-The bootstrap remains authoritative for what each stage must investigate, persist and prove. This setup only improves how Claude Code discovers, retrieves and verifies external evidence.
+The original implementation placed research orchestration in a project-specific `legal-bootstrap-research` skill. Comparison with other Production Skills bootstraps showed that most research retrieval, direct-source extraction, and stage-execution mechanics are repeated across domains. Those mechanics are now separated from the legal evidence model.
 
-## Decision
+The legal bootstrap remains authoritative for what each stage must investigate, persist, and prove.
 
-Use a native-first, Firecrawl-escalation model:
-
-```text
-bootstrap stage contract
-        ↓
-Claude Code WebSearch
-        ↓
-Claude Code WebFetch
-        ↓
-coverage / authority / currency check
-        ↓
-retrieval problem or material coverage gap?
-        ├─ no  → continue native research
-        └─ yes → Firecrawl escalation
-                    ├─ search --scrape
-                    ├─ scrape
-                    ├─ map
-                    ├─ crawl
-                    ├─ interact
-                    ├─ parse
-                    └─ developer index (Stage 11/tooling work)
-        ↓
-challenge / reconcile
-        ↓
-persist stage evidence
-        ↓
-check stage exit criteria
-```
-
-Claude Code remains the researcher. Firecrawl extends retrieval when native tools are inadequate or materially less efficient.
-
-## Project skill
-
-The project-specific procedure lives at:
+## Architecture
 
 ```text
-.claude/skills/legal-bootstrap-research/SKILL.md
+shared bootstrap mechanics
+│
+├── bootstrap-research
+│   └── search / retrieval / challenge / provenance discipline
+│
+├── direct-source-extraction
+│   └── books / documents / reading coverage / reconciliation
+│
+└── bootstrap-stage-execution
+    └── stage loop / verification / repair / commit / continuation
+          │
+          ▼
+legal-skills project profile
+│
+├── .claude/bootstrap/research-profile.md
+│   └── legal authority / jurisdiction / temporal-validity rules
+│
+├── .claude/bootstrap/execution-contract.md
+│   └── branch / authorisation / commit / blocker rules
+│
+└── governing bootstrap specification
+    └── substantive legal stages and exit criteria
 ```
 
-Claude Code project skills are discovered automatically from `.claude/skills/`. The skill encodes:
+The three generic skills are temporarily co-located in this branch so the architecture can be exercised. They are candidates for extraction to the central `production-skills` bootstrap tooling after cross-project validation; they are not intended to become legal-domain product skills.
 
-- stage-contract-first research;
-- multiple-query evidence discovery;
-- primary/authoritative source preference;
-- native `WebSearch` / `WebFetch` as the default path;
-- explicit Firecrawl escalation triggers;
-- legal source provenance and temporal-validity capture;
-- Stage 2, 3, 4, 5 and 11 routing rules;
-- stop conditions tied to stage exit criteria rather than source count.
+## Shared project-support skills
 
-It is intentionally a bootstrap research skill, not a generic `deep-research` skill.
+### `bootstrap-research`
+
+Location:
+
+```text
+.claude/skills/bootstrap-research/SKILL.md
+```
+
+Owns only reusable research mechanics:
+
+- stage-contract-first evidence questions;
+- multiple-query discovery where needed;
+- primary/authoritative/first-party source preference as specialised by the local profile;
+- inspected-source provenance;
+- contradiction and gap research;
+- native Claude `WebSearch` / `WebFetch` first;
+- Firecrawl escalation for concrete retrieval problems;
+- stop conditions tied to actual stage evidence rather than source count.
+
+It deliberately does not encode legal authority rules.
+
+### `direct-source-extraction`
+
+Location:
+
+```text
+.claude/skills/direct-source-extraction/SKILL.md
+```
+
+Owns the repeated direct-reading pattern used by Seed → Five → Challenge bootstraps:
+
+- source-access register;
+- reading coverage;
+- stable source locations;
+- independently expressed findings;
+- applicability and limitations;
+- overlap / conflict analysis;
+- corpus reconciliation;
+- unresolved claims for broader challenge;
+- copyright-safe persistence.
+
+It is used when a bootstrap explicitly requires meaningful source examination rather than summaries or model memory.
+
+### `bootstrap-stage-execution`
+
+Location:
+
+```text
+.claude/skills/bootstrap-stage-execution/SKILL.md
+```
+
+Owns the repeated stage loop:
+
+```text
+read stage
+→ read accepted dependencies
+→ extract requirements
+→ execute
+→ persist
+→ verify
+→ repair
+→ commit stage
+→ verify remote
+→ continue when authorised
+```
+
+The skill keeps one-stage/one-commit discipline but removes unnecessary process stops. Failed searches, tests, commands, extraction attempts, or implementations are execution problems to repair. The process stops only when a genuine user decision is required.
+
+## Legal project profile
+
+Location:
+
+```text
+.claude/bootstrap/research-profile.md
+```
+
+This keeps domain-specific evidence rules local:
+
+- legal authority source classes;
+- books-versus-current-authority distinction;
+- jurisdiction and matter-date capture;
+- commencement / amendment / later-treatment / guidance currency;
+- confidentiality and privilege constraints;
+- legal-specific Stage 2 / 3 / 4 / 5 / 11 routing;
+- legal limits on Firecrawl developer/research indexes.
+
+The generic research skill reads this profile rather than containing legal-specific behaviour itself.
+
+## Lean execution contract
+
+Location:
+
+```text
+.claude/bootstrap/execution-contract.md
+```
+
+The contract is intentionally smaller than the earlier Game / Software execution contracts.
+
+It retains:
+
+```text
+bootstrap specification is authoritative
+repository state is authoritative
+complete substantive stage work
+verify before completion
+repair failures
+one stage per commit
+stage number in commit message
+never invent evidence
+continue through an authorised range
+```
+
+It simplifies blocker behaviour:
+
+```text
+failed test/search/tool/implementation
+→ repair and continue
+
+permission / material ambiguity / unavailable mandatory evidence / reopening accepted scope
+→ ask user
+```
+
+An exhaustive conformance table is optional unless the stage or risk justifies it; verification itself remains mandatory.
+
+## Native-first research stack
+
+The retrieval architecture remains:
+
+```text
+bootstrap stage
+      ↓
+Claude WebSearch
+      ↓
+Claude WebFetch
+      ↓
+coverage / evidence check
+      ↓
+retrieval problem?
+      ├─ no  → continue native research
+      └─ yes → Firecrawl escalation
+                  ├─ search --scrape
+                  ├─ scrape
+                  ├─ map
+                  ├─ crawl
+                  ├─ interact
+                  ├─ parse
+                  └─ developer index for tooling research
+```
+
+Claude remains the researcher. Firecrawl extends retrieval; it does not replace the bootstrap methodology.
 
 ## Firecrawl setup
 
-Install the CLI outside the repository:
+Install outside the repository:
 
 ```bash
 npm install -g firecrawl-cli
@@ -74,158 +205,79 @@ firecrawl login --browser
 firecrawl --status
 ```
 
-For Claude Code, install only the core retrieval skills needed by this workflow rather than Firecrawl workflow skills:
+For Claude Code, install only the core retrieval capabilities required by this workflow rather than generic deep-research workflows.
 
-```bash
-npx skills add firecrawl/skills \
-  --global \
-  --agent claude-code \
-  --skill \
-    firecrawl-search \
-    firecrawl-scrape \
-    firecrawl-map \
-    firecrawl-crawl \
-    firecrawl-interact \
-    firecrawl-parse \
-    firecrawl-developer-index \
-  --yes
-```
-
-The project skill does not require Firecrawl to be the default provider. Do **not** run:
+Do **not** run:
 
 ```bash
 firecrawl setup defaults
 ```
 
-That mode is designed to route supported agents away from native web search/fetch. This bootstrap deliberately preserves Claude Code's native web tools as the first path.
+Native Claude web search/fetch remains the primary path.
 
-Do not install or depend on Firecrawl workflow skills such as `firecrawl-deep-research` for this bootstrap. The legal bootstrap already defines the governing research process.
+Do not make this bootstrap depend on `firecrawl-deep-research`. The project's own bootstrap defines the research process.
 
-## Selected Firecrawl capabilities
+## Selected Firecrawl roles
 
-### `firecrawl-search`
-
-Use when native discovery needs richer retrieval, especially when several results need full-page content in one operation. Save large results under `.firecrawl/` rather than streaming them into context.
-
-### `firecrawl-scrape`
-
-Use as an extraction fallback for a known URL when `WebFetch` is incomplete or unsuitable.
-
-### `firecrawl-map`
-
-Use to discover the structure of an authoritative site before selecting the relevant guidance, registry, documentation or policy pages.
-
-### `firecrawl-crawl`
-
-Use only for a bounded authoritative site area when several related pages must be examined together. Avoid broad indiscriminate crawling.
-
-### `firecrawl-interact`
-
-Use for sites that require clicks, forms, pagination or other dynamic interaction. It is not the default way to fetch ordinary pages.
-
-### `firecrawl-parse`
-
-Use for difficult local PDF/DOCX/XLSX extraction when Claude Code's local document inspection is inadequate and external processing is acceptable. This is a fallback, not the default path for the five-book corpus.
-
-### `firecrawl-developer-index`
-
-Use primarily in Stage 11 for developer/tooling questions covering GitHub issues, merged pull requests, READMEs and documentation. It is not a legal-authority source.
-
-## Deliberately excluded
-
-### Firecrawl deep-research workflows
-
-Excluded because they would introduce a second orchestration methodology alongside the legal bootstrap's own staged research model.
-
-### Firecrawl research-paper index
-
-Excluded from the legal research path. Its indexed literature is oriented toward biomedical/life-science literature and arXiv, not authoritative legal research.
-
-### Firecrawl build skills
-
-Excluded because the bootstrap is using Firecrawl as an operator tool, not integrating Firecrawl into the legal-skills product code.
-
-### Firecrawl as default web provider
-
-Excluded because native Claude Code search/fetch is adequate for ordinary discovery and straightforward authoritative pages. Firecrawl is an escalation path.
-
-## Stage routing
-
-| Bootstrap stage | Research-tooling expectation |
+| Capability | Role |
 | --- | --- |
-| Stage 2 — corpus selection | Native web search for candidate/edition/access reconnaissance; Firecrawl only if source discovery is difficult |
-| Stage 3 — corpus extraction | Direct local book examination first; `firecrawl parse` only as a justified fallback |
-| Stage 4 — professional-practice challenge | Multiple independent native searches; Firecrawl search/map/crawl when coverage or site structure warrants it |
-| Stage 5 — authority/temporal model | Native search/fetch against authoritative sources; Firecrawl extraction only when necessary |
-| Stage 11 — tools/databases/registries | Native search + official docs; developer index for implementation/API/GitHub evidence |
+| search + scrape | richer multi-result retrieval |
+| scrape | extraction fallback for a known URL |
+| map | authoritative-site structure discovery |
+| crawl | bounded multi-page corpus |
+| interact | forms, pagination, dynamic sites |
+| parse | difficult local documents when external processing is acceptable |
+| developer index | implementation/tooling evidence such as docs, READMEs, issues and merged PRs |
 
-Other stages use the same routing rule whenever they require current external evidence.
+Large retrieval artefacts belong under `.firecrawl/`, which remains ignored by Git.
 
-## Evidence discipline
+## Legal-specific routing retained locally
 
-The retrieval stack must preserve the legal bootstrap's distinction:
+The legal profile preserves the important domain split:
 
 ```text
 foundational books
 → durable method / professional practice
 
 authoritative current sources
-→ applicable legal proposition for a defined jurisdiction and date
+→ applicable proposition for a defined jurisdiction and date
 ```
 
-For material external findings record, as applicable:
+Stage 3 remains direct-source/local-first. Stage 4 challenges the corpus independently. Stage 5 makes authority and temporal validity explicit. Stage 11 may use developer-index evidence for tools and APIs but never as substantive legal authority.
+
+## Why this is preferable
+
+The previous structure implied that every Production Skills project should create its own research orchestration skill. The revised structure separates:
 
 ```text
-research question
-jurisdiction / territory
-matter or validity date
-proposition
-source / authority type
-stable URL or identifier
-publication / judgment / made date
-effective / commencement / update date
-retrieved-at date
-section / paragraph / page / location
-applicability
-limitations / contrary evidence
-project implication
+HOW research/execution works
+→ reusable family candidate
+
+WHAT evidence counts in this domain
+→ project-local profile
+
+WHAT the stage must produce
+→ project bootstrap specification
+
+WHAT this run may execute
+→ small execution contract
 ```
 
-Search snippets are discovery aids, not evidence. Important claims must be based on inspected sources.
+This reduces duplicated skills while keeping domain evidence rules and production intelligence local.
 
-## Context and cost control
+## Extraction status
 
-Firecrawl outputs can be large. Save them under `.firecrawl/` and inspect them incrementally. The repository ignores that directory.
+The generic skills are intentionally marked as family candidates rather than silently moved to `production-skills` from this branch. Central extraction should preserve the Production Skills rule that shared abstractions are promoted only after repeated cross-domain evidence is reviewed.
 
-Prefer the cheapest adequate retrieval operation:
-
-```text
-WebSearch before Firecrawl search
-WebFetch before Firecrawl scrape
-scrape before map/crawl
-map before broad crawl
-local Read before external document parsing
-```
-
-Escalation should solve a specific retrieval problem, not merely add more tools.
-
-## Confidentiality boundary
-
-Do not upload privileged, confidential, unpublished, personal or commercially sensitive material to Firecrawl without explicit approval. For supplied books and project-local documents, prefer local inspection. Apply the same care to any external web or AI service when matter confidentiality is material.
+The current Game Development, Software Engineering, Business Building, and Legal bootstrap patterns provide strong evidence for the abstraction, but the central repository should own the actual promotion step.
 
 ## Verification
 
-A working local setup should satisfy:
+This branch is internally coherent when:
 
-```bash
-firecrawl --status
-```
-
-and a small disposable extraction check may be used when needed:
-
-```bash
-mkdir -p .firecrawl
-firecrawl scrape "https://firecrawl.dev" -o .firecrawl/install-check.md
-```
-
-Successful Firecrawl setup is useful but is not a bootstrap-stage completion criterion by itself. If Firecrawl is unavailable, continue with native Claude Code tools unless the stage genuinely depends on a retrieval capability that cannot otherwise be completed.
+- `legal-bootstrap-research` no longer exists;
+- the three generic support skills are discoverable under `.claude/skills/`;
+- legal-specific evidence rules exist only in the local research profile;
+- the execution contract is lean and project-specific;
+- `.firecrawl/` remains ignored;
+- the governing legal bootstrap is unchanged and remains authoritative.
