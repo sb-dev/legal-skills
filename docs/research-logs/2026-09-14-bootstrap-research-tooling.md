@@ -1,207 +1,84 @@
 # Bootstrap Research and Execution Tooling
 
 **Status:** Family-candidate prototype  
-**Created:** 14 September 2026  
 **Revised:** 17 September 2026  
 **Branch:** `feat/bootstrap-3`
 
-## Purpose
+## Operator model
 
-This branch prototypes a reusable bootstrap runtime for Production Skills projects. The operator should not need to restate stage numbers, ranges, research instructions, verification rules, or continuation prompts on every run.
-
-The governing bootstrap specification remains authoritative for domain work and evidence requirements.
-
-## Operator interface
-
-The normal interface is one command:
+The normal entry point is:
 
 ```text
 /bootstrap
 ```
 
-With no arguments it means:
+The user should not repeat stage numbers, research instructions, or supplied-book paths on each run.
+
+## Local supplied-book convention
+
+Put user-supplied book PDFs under:
 
 ```text
-inspect repository state
-→ determine next incomplete stage
-→ execute it completely
-→ verify and repair
-→ commit and push that stage
-→ continue with the next incomplete stage
-→ stop only for a genuine user decision
-→ run the final audit after the last stage
+books/
 ```
 
-The user does not need to repeat prompts such as `complete Stage 1`, `continue to Stage 4`, or `continue the next stage`.
+Subdirectories are allowed; `/bootstrap` scans `books/**/*.pdf`.
 
-## Architecture
+Lifecycle:
 
 ```text
-/bootstrap                       # public operator command
+local PDF discovered
+→ treat as user-supplied source
+→ capture bibliographic/access metadata
+→ apply corpus-selection and permission rules from the bootstrap
+→ directly examine selected books when the extraction stage arrives
+→ persist reading coverage and findings
+```
+
+The actual PDFs remain local working material and are gitignored. Durable logs record only repository-relative identifiers such as `books/<file>.pdf`, bibliographic metadata, access state, selection decisions, reading coverage and findings. Never persist absolute machine paths.
+
+Do not upload supplied PDFs to Firecrawl or another external service without explicit user approval. Native/local reading is the default.
+
+If more PDFs are supplied than the foundational corpus allows, follow the governing bootstrap's approval rules before excluding, replacing or demoting any supplied source. If a new PDF appears after corpus selection is already accepted, do not silently reopen the corpus; treat it as supplementary unless the process or user explicitly reopens selection.
+
+## Skills
+
+```text
+/bootstrap
     ↓
-bootstrap-stage-execution        # internal stage runner
-    ├── bootstrap-research       # external research/retrieval
-    └── direct-source-extraction # direct book/document examination
-          ↓
-governing bootstrap specification
-+ accepted repository research logs
-+ bootstrap execution contract
+bootstrap-stage-execution
+    ├── bootstrap-research
+    └── direct-source-extraction
 ```
 
-Claude-specific project files are actual skills under `.claude/skills/`. There is no `.claude/bootstrap/` configuration convention.
+`bootstrap-research` uses Claude Code `WebSearch` / `WebFetch` first and escalates to Firecrawl only for a concrete retrieval problem. `direct-source-extraction` owns local source inventory, meaningful reading, source-location traceability and reconciliation.
 
-## `bootstrap`
-
-Location:
+## Retrieval boundary
 
 ```text
-.claude/skills/bootstrap/SKILL.md
+WebSearch before Firecrawl search
+WebFetch before Firecrawl scrape
+local Read before external document parsing
 ```
 
-Owns orchestration only:
+Large Firecrawl outputs belong under `.firecrawl/`, which is gitignored.
 
-- locate the current execution contract;
-- read the governing bootstrap;
-- verify repository/branch state without discarding local work;
-- reconstruct accepted progress from committed repository evidence;
-- determine the next incomplete stage;
-- authorise the remaining bootstrap by default;
-- delegate each stage to `bootstrap-stage-execution`;
-- continue automatically after successful stage completion;
-- run the final/global audit.
+## Source confidentiality
 
-## Internal support skills
+`books/` is also gitignored. Supplied books, private research material and absolute local source locations must not be committed. Legal confidentiality and privilege rules from the governing bootstrap continue to apply to any external service use.
 
-### `bootstrap-stage-execution`
-
-Executes one stage completely:
+## Separation of responsibility
 
 ```text
-read stage
-→ read dependencies
-→ execute
-→ persist
-→ verify
-→ repair
-→ commit
-→ push
-→ verify remote
-→ return to /bootstrap
+HOW bootstrap research/execution works
+→ reusable Claude skills
+
+WHAT counts as legal evidence and what each stage must produce
+→ governing legal bootstrap specification
+
+WHAT this branch may execute
+→ bootstrap execution contract
+
+WHAT source files are locally available
+→ books/**/*.pdf at runtime
 ```
-
-### `bootstrap-research`
-
-Provides reusable research mechanics:
-
-- derive evidence questions from the current stage;
-- use Claude `WebSearch` / `WebFetch` first;
-- inspect actual sources rather than search snippets;
-- research contradictions and material gaps;
-- preserve provenance and currency;
-- escalate to Firecrawl only for concrete retrieval problems.
-
-Domain-specific evidence rules come from the governing bootstrap specification.
-
-### `direct-source-extraction`
-
-Handles stages that require meaningful examination of books, standards, papers, or supplied documents rather than summaries or model memory. It records source access, reading coverage, traceable findings, applicability, conflicts, reconciliation, and unresolved claims.
-
-## Execution contract
-
-Location:
-
-```text
-docs/research-logs/2026-09-17-bootstrap-execution-contract.md
-```
-
-The contract now defines `/bootstrap` as the operator command and makes its default authorisation explicit:
-
-```text
-/bootstrap
-→ next incomplete stage through final stage
-```
-
-Only an explicit user instruction narrows that range.
-
-The contract retains:
-
-```text
-repository state is authoritative
-one stage = one commit
-stage number in commit message
-verify before completion
-repair before escalation
-push + verify remote before continuation
-never invent evidence
-```
-
-A failed search, test, command, extraction, implementation, or verification step is an execution problem to repair, not a reason to ask whether to continue.
-
-## Research stack
-
-Default retrieval remains native-first:
-
-```text
-Claude WebSearch
-→ Claude WebFetch
-→ evidence check
-→ Firecrawl only when needed
-```
-
-Firecrawl roles:
-
-| Capability | Role |
-| --- | --- |
-| search + scrape | retrieve several full results |
-| scrape | fallback extraction for a known URL |
-| map | discover site structure |
-| crawl | bounded multi-page corpus |
-| interact | forms, pagination, dynamic sites |
-| parse | difficult local documents when external processing is acceptable |
-| developer index | docs, READMEs, issues and merged PRs for tooling research |
-
-Do not run `firecrawl setup defaults`; native Claude search/fetch remains the primary path. Do not add a generic deep-research workflow because the project bootstrap already defines the research process.
-
-Large Firecrawl artefacts belong under `.firecrawl/`, which remains ignored by Git.
-
-## Legal-specific behaviour
-
-Legal-specific rules remain in the Legal Skills bootstrap, including:
-
-- jurisdiction before rule application;
-- authority before assertion;
-- temporal currency as part of correctness;
-- books inform method while current authority governs legal propositions;
-- confidentiality and privilege constraints;
-- direct-source examination of the five-book corpus.
-
-The generic skills read those requirements from the bootstrap rather than duplicating them in Claude configuration.
-
-## Family extraction candidate
-
-The reusable candidate is now four skills with one public surface:
-
-```text
-public:
-  bootstrap
-
-internal:
-  bootstrap-stage-execution
-  bootstrap-research
-  direct-source-extraction
-```
-
-The implementation is temporarily hosted in `legal-skills` for validation. If it proves useful across Legal, Software Engineering, Game Development, Business Building, and other Production Skills projects, the central `production-skills` repository should own the shared implementation.
-
-## Verification
-
-This branch is coherent when:
-
-- `/bootstrap` is the only command the operator normally needs;
-- `.claude/skills/bootstrap/SKILL.md` exists;
-- the three support skills remain available internally;
-- the execution contract authorises remaining stages by default;
-- each stage is committed and pushed separately;
-- domain evidence rules come from the governing bootstrap;
-- `.claude/bootstrap/` and `legal-bootstrap-research` do not exist;
-- `.firecrawl/` remains ignored.

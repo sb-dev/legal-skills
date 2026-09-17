@@ -1,6 +1,6 @@
 ---
 name: direct-source-extraction
-description: Shared direct-source examination and reconciliation procedure for bootstrap stages that require meaningful reading of supplied books, papers, standards, documents, or other source material. Use when summaries, bibliographies, publisher descriptions, or model memory are explicitly insufficient evidence.
+description: Internal direct-source examination and reconciliation procedure used when a bootstrap stage requires meaningful reading of supplied books, papers, standards, documents, or other source material. It automatically uses local PDFs under books/ when they are part of the required corpus.
 allowed-tools:
   - Read
   - Grep
@@ -10,9 +10,24 @@ allowed-tools:
 
 # Direct Source Extraction
 
-Use this skill when a bootstrap stage requires direct examination of source material rather than source discovery alone.
+Use this skill when the governing bootstrap requires direct examination rather than source discovery alone.
 
-The project bootstrap defines the required corpus, source permissions, minimum coverage, and exit criteria. This skill standardises how examination and reconciliation are recorded.
+## Local book source convention
+
+Use `books/**/*.pdf` as the default location for user-supplied book PDFs.
+
+Before extraction:
+
+1. inventory all PDFs under `books/` recursively;
+2. match the selected corpus to local files using document metadata and accepted source records, not filename similarity alone;
+3. record only repository-relative identifiers such as `books/book.pdf` in durable logs;
+4. never commit, rename, move, delete or modify supplied PDFs;
+5. never upload a supplied PDF to Firecrawl or another external service without explicit user approval;
+6. prefer Claude/local PDF reading or local text extraction before any external parsing service.
+
+If a required selected source cannot be matched to an accessible local file and the bootstrap requires direct reading, record the exact missing source as a blocker rather than substituting summaries or model memory.
+
+New PDFs discovered after a corpus-selection stage has already been accepted do not silently change the accepted corpus. Treat them as supplementary inputs unless the governing process requires reconsideration or the user explicitly asks to reopen selection.
 
 ## Access before extraction
 
@@ -20,16 +35,17 @@ For each required source record:
 
 ```text
 title / identifier
+author
 edition / version / publication year where relevant
 provided or selected origin
-source location or non-public identifier
+repository-relative local source identifier
 access state
 intended contribution
 material actually examined
 reading limitations
 ```
 
-Useful access states are:
+Useful access states include:
 
 ```text
 full text available
@@ -38,19 +54,15 @@ secondary material only
 unavailable
 ```
 
-Access is not reading. Do not mark a source examined because a file exists or because a table of contents, abstract, review, summary, or publisher description is available.
+Access is not reading. A file, table of contents, abstract, review, summary, or publisher description does not count as direct examination.
 
-If the bootstrap requires direct examination and adequate source access is unavailable, record the gap as a blocker rather than inferring findings.
-
-## Examine material meaningfully
-
-Read the portions required to assess the source's intended contribution. Do not extract only famous passages or search hits if doing so would miss the source's argument, conditions, limitations, or counterexamples.
+## Examination record
 
 For each material finding capture:
 
 | Field | Required content |
 | --- | --- |
-| Source location | Book/document, edition/version, chapter/section/page or other stable location actually examined |
+| Source location | Source, edition/version, chapter/section/page or stable location actually examined |
 | Problem / concept | Independently expressed principle, method, claim, model, or heuristic |
 | Applicability | Context, assumptions, prerequisites, scope, and limitations |
 | Production effect | Decision, workflow, artefact, behaviour, or responsibility affected |
@@ -59,11 +71,11 @@ For each material finding capture:
 | Relationships | Support, overlap, tension, contradiction, or dependency with other sources |
 | Disposition | Retain, merge, adapt, qualify, reject, or research further |
 
-Use the project's domain terminology rather than forcing a universal schema beyond these evidence fields.
+Use the project's domain terminology rather than forcing a universal domain model.
 
 ## Reconcile the corpus
 
-After per-source extraction, analyse across sources:
+Analyse across sources:
 
 ```text
 reinforcing findings
@@ -75,30 +87,12 @@ important topics absent from the corpus
 claims requiring broader professional / empirical / current-practice challenge
 ```
 
-Repeated claims across several sources do not automatically constitute independent corroboration.
+Repeated claims do not automatically constitute independent corroboration. Do not force every selected source to contribute a core rule.
 
-Do not force every selected source to contribute a core rule. A source may have a narrow contribution, be superseded by stronger evidence, or remain useful only as a challenge perspective.
+## Publication boundary
 
-## Copyright and publication boundary
+Persist independently expressed synthesis and concise traceability, not substantial copied text, reconstructed chapters, proprietary examples, supplied books, private absolute paths, or private source material.
 
-Persist independently expressed synthesis and concise traceability, not substantial copied text, reconstructed chapters, proprietary examples, or private source material.
+## Completion
 
-Do not commit supplied books or private source locations unless the user explicitly intends those files or locations to be published.
-
-## Handoff to broader research
-
-Produce explicit unresolved claims and gaps for the later challenge stage. Direct-source extraction establishes what the corpus contributes; it does not prove that the corpus is complete or current.
-
-## Completion check
-
-Before marking a direct-source stage complete, verify that:
-
-- every required source has been meaningfully examined for its intended contribution;
-- reading coverage is recorded honestly;
-- material findings have stable source locations;
-- synthesis is independently expressed;
-- applicability and limitations are preserved;
-- overlaps and conflicts are reconciled rather than hidden;
-- unresolved claims and missing coverage are explicit;
-- inadequate access has not been disguised with summaries or model memory;
-- publication remains copyright-safe and does not expose private source material.
+A direct-source stage is complete only when required sources have been meaningfully examined for their intended contributions, reading coverage is honest, material findings are traceable, limitations/conflicts are explicit, and unresolved claims are handed to later challenge research.
