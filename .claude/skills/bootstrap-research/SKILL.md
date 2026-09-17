@@ -1,6 +1,6 @@
 ---
 name: bootstrap-research
-description: Shared evidence-first research procedure for Production Skills bootstrap stages. Use when a stage requires external research, current verification, professional-practice challenge, capability-landscape research, or other source-based investigation. The project bootstrap and local research profile define what evidence is required; this skill defines how to acquire and qualify it.
+description: Shared evidence-first research procedure for Production Skills bootstrap stages. Use when a stage requires external research, current verification, professional-practice challenge, capability-landscape research, or other source-based investigation. The project bootstrap defines what evidence is required; this skill defines how to acquire and qualify it.
 allowed-tools:
   - WebSearch
   - WebFetch
@@ -21,11 +21,13 @@ This is a reusable bootstrap-support skill. It does not define a domain methodol
 Before researching, read:
 
 1. the current stage in the project's authoritative bootstrap specification;
-2. accepted prior-stage outputs that the stage depends on;
-3. `.claude/bootstrap/research-profile.md` when present;
-4. `.claude/bootstrap/execution-contract.md` when present.
+2. the bootstrap's domain-specific evidence, source, currency, privacy, or professional-practice rules relevant to that stage;
+3. accepted prior-stage outputs that the stage depends on;
+4. the applicable bootstrap execution contract under `docs/research-logs/` when one exists for the current run.
 
-The bootstrap says **what must be proved**. The research profile says **what counts as strong evidence in this domain**. This skill says **how to obtain and challenge that evidence**.
+The bootstrap says **what must be proved** and **what counts as adequate domain evidence**. This skill says **how to obtain and challenge that evidence**.
+
+Do not invent a second project-specific research profile when the governing bootstrap already contains the domain rules.
 
 ## Research loop
 
@@ -33,7 +35,7 @@ For each substantive stage:
 
 1. Convert stage requirements and exit criteria into distinct evidence questions.
 2. Search each material question from more than one genuinely different angle when one query is unlikely to establish adequate coverage.
-3. Prefer the source classes defined by the local research profile; otherwise prefer primary, authoritative, official, empirical, or first-party sources appropriate to the claim.
+3. Prefer the source classes required by the governing bootstrap; otherwise prefer primary, authoritative, official, empirical, or first-party sources appropriate to the claim.
 4. Inspect the source itself. Search snippets, model memory, summaries, and generated prose are discovery aids, not evidence.
 5. Capture enough provenance to trace every material finding to an inspected source.
 6. Look for missing responsibilities, counterexamples, contrary evidence, temporal changes, scope limits, and implementation constraints.
@@ -90,7 +92,7 @@ evidential standing
 project implication
 ```
 
-The local research profile may require additional domain fields.
+Add any domain-specific provenance fields required by the governing bootstrap.
 
 ## Direct-source stages
 
@@ -118,7 +120,7 @@ Before research-dependent stage completion, verify that:
 
 - each material research question has evidence or an explicit bounded gap;
 - material findings are traceable to inspected sources;
-- the local domain evidence hierarchy was followed;
+- the bootstrap's domain evidence rules were followed;
 - contrary evidence and material limitations were investigated;
 - change-sensitive claims were checked for currency where relevant;
 - direct-source requirements were actually satisfied where required;

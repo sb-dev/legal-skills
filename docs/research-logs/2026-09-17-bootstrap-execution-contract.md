@@ -1,10 +1,10 @@
-# Legal Skills Bootstrap Execution Contract
+# Legal Skills — Bootstrap Execution Contract
 
 **Repository:** `sb-dev/legal-skills`  
 **Working branch:** `feat/bootstrap-3`  
 **Governing bootstrap:** `docs/research-logs/2026-09-08-legal-skills-new-project-bootstrap-process.md`
 
-This contract defines execution mechanics only. The bootstrap specification remains authoritative for substantive requirements and exit criteria.
+This contract defines execution mechanics only. The bootstrap specification remains authoritative for substantive requirements, domain evidence rules, and exit criteria.
 
 ## Current-stage rule
 
@@ -29,7 +29,7 @@ read complete stage
 → continue when authorised
 ```
 
-Use the shared project support skills where applicable:
+Use the shared project-support skills where applicable:
 
 ```text
 bootstrap-stage-execution
@@ -37,7 +37,7 @@ bootstrap-research
 direct-source-extraction
 ```
 
-and apply `.claude/bootstrap/research-profile.md` for legal evidence rules.
+Domain-specific legal evidence rules come directly from the governing legal bootstrap specification. Do not maintain a duplicate `.claude` research profile.
 
 ## Non-negotiable evidence rules
 
@@ -71,44 +71,41 @@ Do not stop merely because work is difficult, a first attempt failed, or verific
 
 ## Verification
 
-Before declaring a stage complete:
+Before completing a stage:
 
-1. re-read its bootstrap section;
-2. inspect the actual persisted outputs;
-3. verify exact counts/distributions where specified;
-4. run required tests, executions, comparisons, or installation checks;
-5. repair every mandatory failure;
-6. record enough verification evidence in the stage output to make completion auditable.
+1. re-read the original stage requirements and exit criteria;
+2. inspect the actual repository outputs;
+3. run required tests, execution, comparisons, or installation checks;
+4. repair every mandatory failure;
+5. persist enough verification evidence to justify completion.
 
-A separate exhaustive PASS/FAIL table is optional unless the stage or risk profile benefits from it.
+An exhaustive conformance table is optional unless the stage, bootstrap, or risk level requires one.
 
-## Commit convention
+## Commit rule
 
-Use one commit per completed stage and include the stage identifier in the message, for example:
-
-```text
-stage 4: challenge professional legal practice
-stage 12 P3: extract privacy pack corpus
-```
-
-Do not create an empty commit solely to mark progress.
-
-## Completion reporting
-
-After each completed stage, report compactly:
+Default to one commit per completed stage and include the stage identifier in the commit message, for example:
 
 ```text
-Stage: <identifier>
-Status: COMPLETE
-Commit: <full SHA>
-Verification: PASS
-Blockers: none
+stage 4: challenge professional practice
+stage 12 P3: extract specialised corpus
 ```
 
-When an authorised range continues, proceed to the next stage rather than waiting for another approval unless a genuine user decision is required.
+After committing, verify the remote branch and intended files before moving on.
+
+## Context rule
+
+Reconstruct every stage from:
+
+```text
+governing bootstrap specification
++
+accepted prior-stage outputs on feat/bootstrap-3
++
+this execution contract
+```
+
+Do not rely on conversation memory for accepted state.
 
 ## Final audit
 
-At the end of the authorised bootstrap range, audit the repository against the bootstrap's global acceptance requirements that are applicable at that point.
-
-Do not claim maturity, publication readiness, benchmark success, installation success, or completion without the corresponding persisted evidence.
+At the end of the authorised range, audit the resulting repository against any global acceptance requirements in the governing bootstrap. Do not claim maturity, publication readiness, benchmark success, installation success, or completion without the required evidence.

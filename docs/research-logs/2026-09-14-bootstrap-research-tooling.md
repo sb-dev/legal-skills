@@ -2,14 +2,14 @@
 
 **Status:** Family-candidate prototype  
 **Created:** 14 September 2026  
-**Revised:** 16 September 2026  
+**Revised:** 17 September 2026  
 **Branch:** `feat/bootstrap-3`
 
 ## Purpose
 
-This branch prototypes a reusable bootstrap-support architecture for Production Skills projects while retaining legal-specific evidence rules locally.
+This branch prototypes reusable bootstrap-support skills for Production Skills projects while keeping domain-specific research rules in each project's governing bootstrap specification.
 
-The original implementation placed research orchestration in a project-specific `legal-bootstrap-research` skill. Comparison with other Production Skills bootstraps showed that most research retrieval, direct-source extraction, and stage-execution mechanics are repeated across domains. Those mechanics are now separated from the legal evidence model.
+The original implementation placed research orchestration in a project-specific `legal-bootstrap-research` skill, then introduced a `.claude/bootstrap/` configuration layer. Cross-project comparison showed both were unnecessary: the reusable mechanics belong in shared skills, while Legal Skills already defines its authority, jurisdiction, temporal-validity, confidentiality, and direct-source rules in the bootstrap specification.
 
 The legal bootstrap remains authoritative for what each stage must investigate, persist, and prove.
 
@@ -28,19 +28,21 @@ shared bootstrap mechanics
     └── stage loop / verification / repair / commit / continuation
           │
           ▼
-legal-skills project profile
+project repository
 │
-├── .claude/bootstrap/research-profile.md
-│   └── legal authority / jurisdiction / temporal-validity rules
+├── governing bootstrap specification
+│   └── domain method / evidence rules / stage requirements / exit criteria
 │
-├── .claude/bootstrap/execution-contract.md
+├── bootstrap execution contract under docs/research-logs/
 │   └── branch / authorisation / commit / blocker rules
 │
-└── governing bootstrap specification
-    └── substantive legal stages and exit criteria
+└── stage research logs
+    └── durable evidence / decisions / verification
 ```
 
-The three generic skills are temporarily co-located in this branch so the architecture can be exercised. They are candidates for extraction to the central `production-skills` bootstrap tooling after cross-project validation; they are not intended to become legal-domain product skills.
+There is no `.claude/bootstrap/` convention. Claude-specific project files are limited to actual skills under `.claude/skills/`.
+
+The three generic skills are temporarily co-located in this branch so the architecture can be exercised. They are candidates for extraction to the central `production-skills` bootstrap tooling after cross-project validation; they are not intended to become Legal Skills product skills.
 
 ## Shared project-support skills
 
@@ -52,18 +54,17 @@ Location:
 .claude/skills/bootstrap-research/SKILL.md
 ```
 
-Owns only reusable research mechanics:
+Owns reusable research mechanics:
 
-- stage-contract-first evidence questions;
+- stage-first evidence questions;
 - multiple-query discovery where needed;
-- primary/authoritative/first-party source preference as specialised by the local profile;
 - inspected-source provenance;
 - contradiction and gap research;
 - native Claude `WebSearch` / `WebFetch` first;
 - Firecrawl escalation for concrete retrieval problems;
-- stop conditions tied to actual stage evidence rather than source count.
+- stop conditions tied to stage evidence rather than source count.
 
-It deliberately does not encode legal authority rules.
+It derives domain-specific evidence requirements directly from the governing bootstrap specification rather than loading a duplicate project research profile.
 
 ### `direct-source-extraction`
 
@@ -112,51 +113,49 @@ read stage
 
 The skill keeps one-stage/one-commit discipline but removes unnecessary process stops. Failed searches, tests, commands, extraction attempts, or implementations are execution problems to repair. The process stops only when a genuine user decision is required.
 
-## Legal project profile
+## Domain-specific evidence rules
 
-Location:
+No separate `.claude` research profile is required.
 
-```text
-.claude/bootstrap/research-profile.md
-```
+For Legal Skills, the governing bootstrap already defines the relevant rules, including:
 
-This keeps domain-specific evidence rules local:
+- authority before assertion;
+- jurisdiction before rule application;
+- temporal currency as part of correctness;
+- books inform method while current authority governs legal propositions;
+- confidentiality and privilege as design constraints;
+- direct-source examination for the five-book corpus;
+- authoritative-source challenge and tooling research stages.
 
-- legal authority source classes;
-- books-versus-current-authority distinction;
-- jurisdiction and matter-date capture;
-- commencement / amendment / later-treatment / guidance currency;
-- confidentiality and privilege constraints;
-- legal-specific Stage 2 / 3 / 4 / 5 / 11 routing;
-- legal limits on Firecrawl developer/research indexes.
+The generic research skill must read those rules from the bootstrap rather than copying them into a second configuration file.
 
-The generic research skill reads this profile rather than containing legal-specific behaviour itself.
+This same pattern should apply to other Production Skills projects: Game Development keeps player-evidence rules in its bootstrap, Software Engineering keeps repository/verification rules in its bootstrap, Business Building keeps empirical/professional-practice rules in its bootstrap, and so on.
 
 ## Lean execution contract
 
 Location:
 
 ```text
-.claude/bootstrap/execution-contract.md
+docs/research-logs/2026-09-17-bootstrap-execution-contract.md
 ```
 
-The contract is intentionally smaller than the earlier Game / Software execution contracts.
-
-It retains:
+The execution contract contains run-specific mechanics only:
 
 ```text
-bootstrap specification is authoritative
-repository state is authoritative
-complete substantive stage work
-verify before completion
-repair failures
-one stage per commit
-stage number in commit message
-never invent evidence
-continue through an authorised range
+repository / branch
+governing bootstrap
+accepted-state reconstruction
+stage authorisation
+one-stage / one-commit rule
+repair-before-escalation behaviour
+genuine-user-decision blockers
+remote verification
+final audit
 ```
 
-It simplifies blocker behaviour:
+It does not duplicate domain research policy.
+
+The contract intentionally simplifies the earlier Game / Software execution contracts:
 
 ```text
 failed test/search/tool/implementation
@@ -231,9 +230,9 @@ Do not make this bootstrap depend on `firecrawl-deep-research`. The project's ow
 
 Large retrieval artefacts belong under `.firecrawl/`, which remains ignored by Git.
 
-## Legal-specific routing retained locally
+## Legal routing from the governing bootstrap
 
-The legal profile preserves the important domain split:
+The Legal Skills bootstrap preserves the important distinction:
 
 ```text
 foundational books
@@ -243,31 +242,33 @@ authoritative current sources
 → applicable proposition for a defined jurisdiction and date
 ```
 
-Stage 3 remains direct-source/local-first. Stage 4 challenges the corpus independently. Stage 5 makes authority and temporal validity explicit. Stage 11 may use developer-index evidence for tools and APIs but never as substantive legal authority.
+Stage 3 remains direct-source/local-first. Stage 4 challenges the corpus independently. Stage 5 makes authority and temporal validity explicit. Stage 11 may use developer/tooling evidence for tools and APIs but never as substantive legal authority.
+
+These are bootstrap rules, not Claude configuration.
 
 ## Why this is preferable
 
-The previous structure implied that every Production Skills project should create its own research orchestration skill. The revised structure separates:
+The corrected structure separates:
 
 ```text
 HOW research/execution works
-→ reusable family candidate
+→ reusable family candidate skills
 
 WHAT evidence counts in this domain
-→ project-local profile
+→ governing project bootstrap
 
 WHAT the stage must produce
-→ project bootstrap specification
+→ governing project bootstrap
 
 WHAT this run may execute
-→ small execution contract
+→ research-log execution contract
 ```
 
-This reduces duplicated skills while keeping domain evidence rules and production intelligence local.
+This avoids project-specific research skills, duplicate research profiles, and non-standard `.claude` configuration folders.
 
 ## Extraction status
 
-The generic skills are intentionally marked as family candidates rather than silently moved to `production-skills` from this branch. Central extraction should preserve the Production Skills rule that shared abstractions are promoted only after repeated cross-domain evidence is reviewed.
+The generic skills remain family candidates rather than being silently moved to `production-skills` from this branch. Central extraction should preserve the Production Skills rule that shared abstractions are promoted only after repeated cross-domain evidence is reviewed.
 
 The current Game Development, Software Engineering, Business Building, and Legal bootstrap patterns provide strong evidence for the abstraction, but the central repository should own the actual promotion step.
 
@@ -275,9 +276,10 @@ The current Game Development, Software Engineering, Business Building, and Legal
 
 This branch is internally coherent when:
 
-- `legal-bootstrap-research` no longer exists;
+- `.claude/bootstrap/` does not exist;
+- `legal-bootstrap-research` does not exist;
 - the three generic support skills are discoverable under `.claude/skills/`;
-- legal-specific evidence rules exist only in the local research profile;
-- the execution contract is lean and project-specific;
+- domain-specific legal evidence rules come from the governing bootstrap specification;
+- the execution contract lives under `docs/research-logs/`;
 - `.firecrawl/` remains ignored;
-- the governing legal bootstrap is unchanged and remains authoritative.
+- the governing legal bootstrap remains authoritative.

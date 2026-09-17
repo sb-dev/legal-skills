@@ -13,7 +13,7 @@ allowed-tools:
 
 This skill standardises execution mechanics. It does not define the domain work. The project's bootstrap specification remains authoritative.
 
-Read `.claude/bootstrap/execution-contract.md` when present for repository, branch, stage-authorisation, commit, and local execution rules.
+When the current run has a bootstrap execution contract under `docs/research-logs/`, use it for repository, branch, stage-authorisation, commit, and blocker rules. Do not require a private `.claude` configuration surface.
 
 ## Stage loop
 
@@ -121,7 +121,7 @@ governing bootstrap specification
 +
 accepted prior-stage outputs
 +
-current execution contract / project profile
+applicable execution contract under docs/research-logs/
 ```
 
 Do not depend on conversation memory for accepted project state.
