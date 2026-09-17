@@ -1,6 +1,6 @@
 ---
 name: bootstrap-stage-execution
-description: Shared execution discipline for staged Production Skills bootstraps. Use when a repository bootstrap is executed stage by stage and requires durable outputs, verification, repair, stage-scoped commits, and continuation across an authorised range.
+description: Internal stage-execution capability used by /bootstrap. It performs one bootstrap stage completely, persists evidence, verifies and repairs the result, commits and pushes the stage, and returns control for automatic continuation.
 allowed-tools:
   - Read
   - Grep
@@ -11,13 +11,13 @@ allowed-tools:
 
 # Bootstrap Stage Execution
 
-This skill standardises execution mechanics. It does not define the domain work. The project's bootstrap specification remains authoritative.
+This is an internal support capability for `/bootstrap`. It standardises execution mechanics; the project's bootstrap specification remains authoritative for domain work, required outputs, and exit criteria.
 
-When the current run has a bootstrap execution contract under `docs/research-logs/`, use it for repository, branch, stage-authorisation, commit, and blocker rules. Do not require a private `.claude` configuration surface.
+Read the applicable bootstrap execution contract under `docs/research-logs/` for repository, branch, commit, blocker, and remote-verification rules.
 
 ## Stage loop
 
-For each authorised stage:
+For the current stage:
 
 1. Read the complete stage in the governing bootstrap specification.
 2. Read accepted prior-stage outputs that the stage depends on.
@@ -29,12 +29,13 @@ For each authorised stage:
    - required execution, tests, comparisons, or installation evidence;
    - exit criteria.
 4. Perform the complete substantive work.
-5. Persist the stage's durable outputs in the repository.
-6. Re-read the stage requirements and verify the actual outputs against them.
-7. Repair failures and re-run affected verification.
-8. Commit only that completed stage unless the project contract explicitly defines another boundary.
-9. Verify the remote branch points to the intended commit and intended files are present.
-10. If the current task or execution contract authorises further stages, continue immediately to the next stage unless a genuine user decision is required.
+5. Use `bootstrap-research` for external evidence work and `direct-source-extraction` when direct examination is required.
+6. Persist the stage's durable outputs in the repository.
+7. Re-read the original stage and verify actual outputs against every mandatory requirement and exit criterion.
+8. Repair failures and re-run affected verification.
+9. Commit only the completed stage, using the stage identifier in the commit message.
+10. Push the commit to the working branch and verify that the remote branch points to the intended commit and contains the intended files.
+11. Return control to `/bootstrap`, which continues with the next incomplete stage automatically.
 
 Do not optimise for reaching the final stage. Complete the current stage properly first.
 
@@ -57,9 +58,9 @@ Never invent research findings, test passes, benchmark results, installation res
 
 Synthetic fixtures must remain explicitly synthetic.
 
-## Verification
+## Verification and repair
 
-Verification should be proportionate to the stage but must check substance, not filenames alone.
+Verification must check substance, not filenames alone.
 
 If a mandatory requirement fails:
 
@@ -70,38 +71,26 @@ diagnose
 → continue
 ```
 
-Do not weaken acceptance criteria, skip required work, or rewrite validators to make incomplete work pass.
+Do not weaken acceptance criteria, skip required work, or change validators merely to make incomplete work pass.
 
-A separate exhaustive conformance table is not mandatory unless the bootstrap specification, execution contract, or risk of the stage requires one. A concise verification record is sufficient when it clearly demonstrates the exit criteria.
+A separate exhaustive conformance table is not mandatory unless the bootstrap specification, execution contract, or stage risk requires one. Persist enough verification evidence to justify completion.
 
-## Blockers and user decisions
+## Genuine blockers
 
-Stop and ask the user only when progress genuinely depends on a user decision, for example:
+Stop and return a user-decision blocker only when progress actually depends on the user, for example:
 
 - explicit permission or approval is required;
 - a supplied source may not be removed, replaced, or demoted without approval;
 - materially different valid interpretations require a product/domain choice;
 - mandatory evidence or capability is unavailable and cannot be repaired or substituted under the governing specification;
-- continuing would reopen accepted scope or decisions without authority.
+- continuing would reopen accepted scope or decisions without authority;
+- proceeding would require discarding or overwriting unrelated local work.
 
-Do **not** stop merely because:
-
-- a test fails;
-- research is incomplete;
-- a search query is poor;
-- a URL is dead;
-- a tool invocation fails;
-- implementation has a defect;
-- verification finds a failure;
-- an alternative supported retrieval or execution path is needed.
-
-Those are execution problems: diagnose, repair, retry, or use an allowed alternative.
+Do not stop merely because a test, search, URL, tool invocation, extraction attempt, implementation, or verification step failed. Those are execution problems: diagnose, repair, retry, or use an allowed alternative.
 
 ## Commit discipline
 
-Default to one commit per completed stage.
-
-Include the stage identifier in the commit message, for example:
+Default to one commit per completed stage. Include the stage identifier, for example:
 
 ```text
 stage 4: challenge professional practice
@@ -110,11 +99,9 @@ stage 12 P3: extract specialised corpus
 
 Do not batch unrelated stages into one commit.
 
-If a stage produces no repository change, do not create an empty commit merely for symmetry; record completion only when the governing process permits a no-change stage.
-
 ## Context rule
 
-Reconstruct stage context from repository state:
+Reconstruct stage context from:
 
 ```text
 governing bootstrap specification
@@ -125,13 +112,3 @@ applicable execution contract under docs/research-logs/
 ```
 
 Do not depend on conversation memory for accepted project state.
-
-## Authorised continuation
-
-If the user has authorised a stage range or the remainder of the bootstrap, continue stage by stage without asking for permission between successfully completed stages.
-
-Stop at the last fully verified stage only when a genuine blocker or user decision prevents the next stage.
-
-## Final audit
-
-When the authorised bootstrap range reaches its final stage, audit the resulting repository against any global acceptance gates in the bootstrap specification. Do not claim maturity, benchmark success, installation success, publication readiness, or completion without the corresponding evidence.
