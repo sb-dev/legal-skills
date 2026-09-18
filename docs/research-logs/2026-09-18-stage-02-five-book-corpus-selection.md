@@ -151,6 +151,10 @@ Only the approved change was applied. No supplied work was removed or replaced. 
 
 Later changes to this corpus must follow the same permission rules and must identify affected extraction and design work.
 
+### Addendum — 18 September 2026 (later the same day)
+
+Decision A2 was superseded by the user. The user instructed the session to proceed with the supplied overviews of S7 and S8 and to overrule the direct-reading rule for them. The corpus is unchanged. Access status for S7 and S8 stays **secondary material only**. The deviation is recorded in `2026-09-18-stage-03-five-book-extraction.md` §1.
+
 ## 8. Remaining knowledge gaps (independent of the decision)
 
 - D9 traceability and change impact: no book in the pool. Stage 4 and Stage 8 must carry this.

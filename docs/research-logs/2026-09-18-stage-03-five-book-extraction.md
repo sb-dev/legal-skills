@@ -1,9 +1,9 @@
 # Stage 3 — Extract and Reconcile the Five-Book Corpus
 
 **Stage:** 3 of the Legal Skills bootstrap (v1.2)  
-**Date opened:** 18 September 2026  
+**Date:** 18 September 2026  
 **Branch:** `feat/bootstrap-3`  
-**Status:** IN PROGRESS — 3 of 5 books examined. **Stage 3 is NOT complete.** See §1.  
+**Status:** Complete **with a user-authorised deviation**. Three books were examined directly from full text. Two books (S7, S8) were examined only through supplied overviews, by explicit user override of the direct-reading rule. See §1.  
 **Governing section:** §9 of `2026-09-08-legal-skills-new-project-bootstrap-process.md`  
 **Inputs:** `2026-09-18-stage-01-domain-boundary.md`; `2026-09-18-stage-02-five-book-corpus-selection.md` (corpus revision 1)
 
@@ -12,19 +12,21 @@ Supporting per-book records (full finding records with all required fields):
 - `2026-09-18-stage-03a-adams-findings.md` — 79 findings (AD1-, AD2-, AD3-)
 - `2026-09-18-stage-03b-finch-fafinski-findings.md` — 52 findings (FF1-, FF2-)
 - `2026-09-18-stage-03c-schauer-findings.md` — 50 findings (SC1-, SC2-)
+- `2026-09-18-stage-03d-whalley-moorhead-overview-findings.md` — 26 **overview-derived** findings (WG-OV-, MVG-OV-)
 
 ---
 
-## 1. Source-access blocker (open)
+## 1. Deviation from the direct-reading rule (user-authorised)
 
-Stage 3 cannot be completed until these two selected books are directly accessible under `books/`:
-
-| Slot | Exact missing source | What is present now |
-| --- | --- | --- |
-| 4 | Matthew Whalley and Chris Guzelian, *The Legal Risk Management Handbook: An International Guide to Protect Your Business from Legal Loss* (Kogan Page, 2016) — full text | `books/legal-risk-management-handbook-expanded-overview.pdf` — a 14-page overview. Secondary material only. |
-| 5 | Richard Moorhead, Steven Vaughan and Cristina Godinho, *In-House Lawyers' Ethics: Institutional Logics, Legal Risk and the Tournament of Influence* (Hart, 2018) — full text | `books/in-house-lawyers-ethics-expanded-overview (1).pdf` — a 15-page overview. Secondary material only. |
-
-Decision A2 (Stage 2 log §7): the user will supply the full texts. No replacement is authorised. The overviews have **not** been used as extraction evidence. No finding in this log comes from them.
+| Item | Record |
+| --- | --- |
+| Rule | Bootstrap §9: a bibliography, publisher description, secondary summary or model memory is not direct-source extraction. |
+| Situation | For S8 (Whalley & Guzelian) and S7 (Moorhead, Vaughan & Godinho) only short overviews are present under `books/`. The session first stopped with an exact missing-source blocker. |
+| User decision | 18 September 2026, in the `/bootstrap` session: use the supplied material; summaries are acceptable; the rule is overruled. This supersedes Stage 2 decision A2. No replacement of either book was requested or made. |
+| What this log therefore claims | S1, S2, S3: directly examined. S7, S8: **not directly examined**. Their findings come from secondary material of unknown authorship and are marked *overview-derived, unverified* everywhere they appear. |
+| Safeguards applied | Separate supporting log and ID prefix (`-OV-`). No book page locations are claimed. Reported figures are flagged unverified. No overview-derived finding is dispositioned as an unqualified *retain*. All are handed to Stage 4 for independent support. Model memory of the books was not used. |
+| Effect on acceptance gates | Bootstrap §32 "all five books have been meaningfully examined" is met for three books and **waived by the user** for two. The final audit must report this as a waiver, not as a pass. |
+| Cure | Add the full texts under `books/` and re-run extraction for S7 and S8. |
 
 ---
 
@@ -35,8 +37,8 @@ Decision A2 (Stage 2 log §7): the user will supply the full texts. No replaceme
 | S1 Adams, *MSCD* 4th ed. | Full text | Introduction; ch 1; ch 2 ¶2.1–2.72 and ¶2.129–2.217; ch 3 (all); ch 6, 7, 8, 9, 11, 12 (all); ch 10 ¶10.1–10.81 and ¶10.91–10.129; ch 4 ¶4.79–4.114; ch 5 ¶5.75–5.115; 80 named entries of ch 13; ch 14, 15, 18, 19 (all); Appendix A (all 214 annotations) compared with Appendix B | ch 2 ¶2.72–2.128; ch 16 (except ¶16.18–16.36, read); ch 17 (except ¶17.1–17.6, read) | Foreword and early Preface; rest of ch 4 and ch 5; ch 10 ¶10.81–10.90 and ¶10.130–end; ch 13 entries outside the 80 listed; works cited, table of cases, index |
 | S2 Finch & Fafinski, *Legal Skills* 3rd ed. | Full text | Introduction; ch 1; ch 2 and ch 5 (method; click-paths and screenshots skipped); ch 3; ch 4 except §4.1.1; ch 6; ch 7; ch 8 (method); ch 14; ch 10 §10.1–10.2, §10.4–10.6; ch 11 §11.1–11.2, §11.3.3.2, §11.3.7; ch 12 §12.3; ch 13 §13.5; ch 17 §17.1, §17.3–17.4, §17.5.2–17.5.3; ch 18 §18.1–18.3, §18.4.5 | Headings only: ch 9, 15, 16; rest of ch 12 and ch 13; referencing-style mechanics in ch 11 | ch 4 §4.1.1; ch 10 §10.3, §10.7; ch 17 §17.2, §17.5.1; most of ch 18 §18.4–18.5 |
 | S3 Schauer, *Thinking Like a Lawyer* | Full text | Preface; ch 1–12 (all, including argument-bearing footnotes) | Purely bibliographic footnotes; index (checked only to confirm the book ends at ch 12) | — |
-| S8 Whalley & Guzelian | **Secondary only** | — | — | Whole book |
-| S7 Moorhead et al. | **Secondary only** | — | — | Whole book |
+| S8 Whalley & Guzelian | **Secondary only** | Supplied 14-page overview, read in full. **No page of the book.** | — | Whole book |
+| S7 Moorhead et al. | **Secondary only** | Supplied 15-page overview, read in full. **No page of the book.** | — | Whole book |
 
 Exact per-part coverage tables are in the supporting logs.
 
@@ -64,7 +66,9 @@ Extraction limits recorded by the readers:
 | AD3-16 (amend vs amend-and-restate) | S1 ¶18.3–18.4 | Content matches |
 | SC2-08 (three-way interpretive triage) | S3 ch 8 §8.2, pp. 157–158 | Content matches |
 
-Limit: 4 of 181 findings were verified by the main session. The rest rest on the agents' direct reading. Stage 4 challenges the material ones in any case.
+5. The two overviews were read in full by the main session. Overview-derived findings cannot be verified against the books.
+
+Limit: 4 of 181 direct findings were verified by the main session. The rest rest on the agents' direct reading. Stage 4 challenges the material ones in any case.
 
 ---
 
@@ -102,11 +106,29 @@ Limit: 4 of 181 findings were verified by the main session. The rest rest on the
 - Law vs fact; hidden empirical premises; burdens, presumptions and deference as structures for uncertainty (SC2-21 to SC2-26).
 - Limits: US common-law focus; theoretical; several transfers to drafting and AI-system design are the reader's inference and are flagged as such in the supporting log.
 
+### S8 Whalley & Guzelian — legal-risk method (overview-derived; medium contribution; unverified)
+
+- Legal risk defined by business loss and four causes: not knowing, misunderstanding, real ambiguity, indifference. Each cause needs a different control (WG-OV-01).
+- Risk sits where the business acts (WG-OV-02). Appetite belongs to the business; the legal function makes risk visible and decidable (WG-OV-03).
+- A five-category taxonomy usable as an issue-spotting sweep (WG-OV-04). An identify–assess–control–report cycle (WG-OV-05).
+- Numeric expression of uncertainty "without false precision" (WG-OV-06) — in tension with the bootstrap default and with S7.
+- Control effectiveness, not existence (WG-OV-07); decision-useful reporting and a defensible record (WG-OV-08); law-change triggers (WG-OV-09); obligation tracking and playbooks (WG-OV-12).
+- Out of core: dispute management (WG-OV-13), governance design.
+
+### S7 Moorhead, Vaughan & Godinho — judgement under pressure (overview-derived; high relevance; unverified)
+
+- The "legal risk" frame can turn a legal boundary into a price (MVG-OV-03). The interpretive question drifts under pressure from "what does the law require" to "what is unlikely to be tested" (MVG-OV-04).
+- Controls and outside opinions can be theatre or risk transfer (MVG-OV-06). "I advised, they decided" can be abdication (MVG-OV-07).
+- Ethical fading and a checklist of rationalisation patterns (MVG-OV-09, MVG-OV-10).
+- The remedy is structural: fixed escalation routes and review points, not exhortation (MVG-OV-11).
+- Transfer from in-house lawyers to an AI assistant under user pressure is **this project's inference** (MVG-OV-01).
+- Reported sample sizes and percentages are unverified (MVG-OV-08, MVG-OV-12).
+
 ---
 
-## 5. Provisional legal-production capability model (partial — 3 of 5 books)
+## 5. Provisional legal-production capability model
 
-Each row maps `source finding → capability → workflow implication → evaluation criterion → candidate benchmark`. Capabilities are **not** skills or commands. C20 and C21 are empty until S8 and S7 are examined.
+Each row maps `source finding → capability → workflow implication → evaluation criterion → candidate benchmark`. Capabilities are **not** skills or commands. C20 and C21 rest only on overview-derived findings and are marked accordingly.
 
 | # | Provisional capability | Source findings | Workflow / command implication | Evaluation criterion | Candidate benchmark case (synthetic) |
 | --- | --- | --- | --- | --- | --- |
@@ -129,14 +151,14 @@ Each row maps `source finding → capability → workflow implication → evalua
 | C17 | House-style and precedent governance | AD1-01, AD1-04, AD3-25, SC1-23, SC2-20 | Standards are pluggable; copy only from compliant precedents; do not generalise a rule from one vivid matter | Style rules are configuration, not hard-coded law | Template rule created from a single unusual dispute |
 | C18 | Escalation triggers found in the books | AD1-20, AD2-02, AD3-12, SC1-08, FF2-25 | Escalate: deliberate ambiguity; departure from clear statutory wording; terms whose meaning depends on governing law (gross negligence, sole discretion); duties of candour about adverse authority | Trigger produces a specific question for a specialist | Client asks for an intentionally ambiguous clause |
 | C19 | Position preparation for negotiation | FF2-26, FF2-27 | Interests vs positions; anchor in the litigated alternative | — | — (low contribution; likely outside core; decide at Stage 13) |
-| C20 | Legal-risk definition, taxonomy, reporting and uncertainty language | **None yet — awaits S8 full text** | — | — | — |
-| C21 | Professional independence, pressure and escalation infrastructure | **None yet — awaits S7 full text** | — | — | — |
+| C20 | Legal-risk framing, cause tagging, control evidence and uncertainty expression *(overview-derived, unverified)* | WG-OV-01 to WG-OV-09, WG-OV-12; qualified by MVG-OV-03, MVG-OV-04, SC2-24 | Tag each risk with its cause; tie it to a product fact; keep "what the law requires" apart from "exposure"; ranges only with a stated basis; control must be shown to operate | Clear requirement never appears only as a likelihood; no composite score; each requirement has operating evidence | Policy exists but the product does not follow it; user asks for an enforcement probability |
+| C21 | Judgement under pressure and structural escalation *(overview-derived, unverified)* | MVG-OV-01 to MVG-OV-07, MVG-OV-09 to MVG-OV-11; WG-OV-03 | Conclusions move only on new facts or authority; restate euphemistic briefs plainly; rationalisations are not reasons; escalation triggers are fixed workflow steps; escalation packages carry adverse facts | Conclusion is stable under repeated pressure; unlawful option is named as such; "counsel cleared it" is verified, not relied on | Same request repeated three times with no new facts; brief framed as "pragmatic disclosure strategy" |
 
-No skill is created per book. S1 feeds C12–C17; S2 feeds C1–C6, C8, C9, C11; S3 feeds and qualifies C2, C3, C5–C10, C13, C17.
+No skill is created per book. S1 feeds C12–C17; S2 feeds C1–C6, C8, C9, C11; S3 feeds and qualifies C2, C3, C5–C10, C13, C17. S8 and S7 (overview-derived) feed C20, C21 and qualify C10, C16 and C18.
 
 ---
 
-## 6. Overlap, support and conflict (across S1–S3)
+## 6. Overlap, support and conflict (S1–S3 direct; S7–S8 overview-derived)
 
 | Topic | Sources | Relationship | Accepted handling |
 | --- | --- | --- | --- |
@@ -155,6 +177,13 @@ No skill is created per book. S1 feeds C12–C17; S2 feeds C1–C6, C8, C9, C11;
 | Over-generalising from one case | SC1-23, SC2-20; AD1-04 (central style guide) | Mild tension | **Adapt.** Central standards yes; rules derived from single matters no. |
 | Negotiation ethics | FF2-25, FF2-27 contain a casual approval of "bluffing" and a claim that a negotiated settlement "is not binding" | Book error / unsafe advice | **Reject** both statements. Recorded as research questions. |
 
+| Quantifying legal uncertainty | WG-OV-06 (give probabilities and ranges; refusing is itself a risk) vs MVG-OV-03 (the risk frame turns a boundary into a price) vs bootstrap §15 (no single score by default) | **Conflict** — the most important one in the corpus | **Qualify.** (1) State what the law requires separately from exposure. (2) A clear requirement is never expressed only as a likelihood. (3) Ranges and scenarios are allowed for truly uncertain outcomes, with a stated basis. (4) No composite score. Stage 9 must test this against independent evidence. |
+| Who decides | WG-OV-03 (make risk visible and decidable; the business decides) and Stage 1 §7 vs MVG-OV-07 (the neutral adviser abdicates) | Tension | **Qualify.** The user decides. The output must still name an unlawful option as unlawful and hold Zone C boundaries. |
+| Advice as forecast | SC2-01, SC2-02 (advice predicts what decision-makers will do) vs MVG-OV-04 (sliding to "what is unlikely to be tested") | Tension | **Qualify.** A forecast of how a tribunal would decide is legitimate. A forecast that nobody will enforce is not a statement of what the law requires and is labelled separately. |
+| Registers, sign-offs and opinions | WG-OV-05, WG-OV-08 vs MVG-OV-06 (compliance theatre; opinions as risk transfer) | Tension | **Adapt.** Records must inform a decision. Escalation packages carry adverse facts and the contrary view. |
+| Playbooks and house standards | WG-OV-12 and AD1-04 | Reinforcing (one side overview-derived) | **Adapt.** Standards are configuration; deviations beyond a threshold escalate. |
+| Control evidence and product consistency | WG-OV-02, WG-OV-07 and bootstrap §4 "the document must match the product" | Reinforcing (overview-derived) | **Retain as heuristic**; the only book-level support found for traceability, and it is unverified. |
+
 Repeated claims are not independent corroboration: S2 and S3 both describe common-law precedent from standard doctrine. Agreement between them is not two pieces of evidence.
 
 ---
@@ -166,20 +195,19 @@ Repeated claims are not independent corroboration: S2 and S3 both describe commo
 3. **Jurisdiction transfer:** S1 and S3 are US-centred; S2 is England and Wales, 2011. Stage 4 must test transfer to UK and EU consumer-facing documents, which none of the three books addresses.
 4. **Currency:** S2 court hierarchy, EU and human-rights material, and all tools; S3 examples of binding US precedent. Rebuild from current sources in Stages 4, 5 and 11.
 5. **Gaps confirmed by reading:** no examined book covers requirement traceability or change impact (D9), confidentiality in tool use (D10), notice-style and consumer document drafting, or product-counsel workflow. S1's process evidence is asserted, not measured (AD3-25).
-6. **Still unexamined:** legal-risk method (S8) and professional independence and escalation (S7).
+6. **Overview-derived material (S7, S8):** all 26 findings need independent support in Stage 4 before use. Verify reported figures (67 interviews; about 400 survey responses; 36%). Check post-2018 professional rules for in-house lawyers and post-2016 enforcement trends. Test the transfer from in-house lawyers to AI assistants under user pressure.
+7. **Research questions from the overviews:** 6 further questions (supporting log d). Total handed to Stage 4: 172.
 
 ---
 
-## 8. Plan for the two pending books
+## 8. If the full texts of S7 and S8 arrive later
 
-When the full texts are present under `books/`:
+Re-run direct extraction for both. Replace supporting log d. Re-check C20, C21 and the last six rows of §6. Identify any Stage 4+ work that relied on overview-derived findings.
 
-| Book | Intended contribution | Priority reading |
-| --- | --- | --- |
-| S8 Whalley & Guzelian | C20: definition and causes of legal risk; taxonomy; identification, quantification, control, reporting; risk appetite; probability language. Test against the bootstrap's "no single score" default. | Part 1 fully; Part 2 category chapters for method |
-| S7 Moorhead et al. | C21: how pressure and role shape legal-risk advice; ethical infrastructure; escalation routes; what makes independence hold. Evidence quality and limits of the empirical method. | Methods; tournament of influence; competing logics; legal-risk chapter(s); moral compass; ecologies; conclusions |
-
-Then: update §2, §4–§7, fill C20 and C21, re-run the overlap/conflict analysis across all five, and re-check the exit criteria.
+| Book | Priority reading |
+| --- | --- |
+| S8 Whalley & Guzelian | Part 1 fully (definition, governance, identify–quantify–report); Part 2 for method |
+| S7 Moorhead et al. | Methods; tournament of influence; competing logics; ethics and legal risk management; moral compass; ecologies |
 
 ---
 
@@ -187,14 +215,14 @@ Then: update §2, §4–§7, fill C20 and C21, re-run the overlap/conflict analy
 
 | Exit requirement (bootstrap §9) | State |
 | --- | --- |
-| All five books meaningfully examined for their contributions | **NOT MET — 3 of 5.** S7 and S8 are blocked on source access (§1). |
-| Material findings traceable | Met for S1–S3 (181 findings with chapter / paragraph / page locations) |
-| Per-book findings and examined-source locations | Met for S1–S3 (supporting logs) |
-| Reading coverage recorded honestly | Met for S1–S3 (§2) |
-| Source-to-capability matrix | Partial (§5): C20, C21 empty |
-| Overlap / conflict analysis | Partial (§6): three books only |
-| Provisional capability model | Partial (§5) |
-| Limitations, conflicts and unresolved claims explicit | Met for S1–S3 (§2, §6, §7) |
-| Book-derived law not treated as authority | Met (§7 item 1) |
+| All five books meaningfully examined for their contributions | **Met for S1–S3. Waived by the user for S7 and S8** (overviews only; §1). |
+| Material findings traceable | S1–S3: met (181 findings with chapter / paragraph / page locations). S7–S8: traceable to overview pages only (26 findings). |
+| Per-book findings and examined-source locations | Met, with the same limit (supporting logs a–d) |
+| Reading coverage recorded honestly | Met (§2) |
+| Source-to-capability matrix | Met (§5); C20 and C21 marked overview-derived |
+| Overlap / conflict analysis | Met (§6) |
+| Provisional capability model | Met (§5) |
+| Limitations, conflicts and unresolved claims explicit | Met (§1, §2, §6, §7) |
+| Book-derived law not treated as authority | Met (§7) |
 
-**Stage 3 remains open.** Stage 4 must not start until this stage is complete.
+**Stage 3 is closed under the user's override.** Stage 4 may start. Stage 4 must treat every `-OV-` finding as an unverified claim.
