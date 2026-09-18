@@ -32,7 +32,7 @@ Total: 274 inspected sources. All 13 practice streams named in bootstrap §10 ar
 4. **Tool-reliability finding (material).** The fetch tool returns a model-written extract. Agents caught it, by checking raw text, doing the following: reversing the holding of a judgment; inventing page content that matched the question; fabricating quotations (twice); misquoting an EU article; giving a wrong author, date and in-force status; mislabelling an annex. Consequences:
    - quotations are marked text-verified or "as reported" in the supporting logs;
    - a model-written summary of a source is not the source — this becomes a production rule (§6, N12);
-   - the same failure is recorded in four independent streams (A-F15, B-F8, C-F9, D-F13, F-X14, G-F14).
+   - the same failure is recorded in six independent streams (A-F15, B-F8, C-F9, D-F13, F-X14, G-F14).
 5. Main-session verification at primary sources (19 September 2026):
 
 | Claim checked | Source | Result |
