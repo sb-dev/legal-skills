@@ -1,7 +1,8 @@
 # Legal Skills — Bootstrap Execution Contract
 
 **Repository:** `sb-dev/legal-skills`  
-**Working branch:** `feat/bootstrap-3`  
+**Working branch:** `claude/bootstrap-vteuud`  
+**Superseded branch label:** `feat/bootstrap-3` (identical content at `e6f1336`; renamed for the execution environment)  
 **Governing bootstrap:** `docs/research-logs/2026-09-08-legal-skills-new-project-bootstrap-process.md`  
 **Operator command:** `/bootstrap`
 
@@ -9,7 +10,9 @@ This contract defines execution mechanics only. The bootstrap specification rema
 
 ## Branch state
 
-Reconstruct accepted progress only from repository state and committed outputs on `feat/bootstrap-3`. Do not inherit stage completion from another feature branch or conversation memory.
+Reconstruct accepted progress only from repository state and committed outputs on the working branch. Do not inherit stage completion from another feature branch or conversation memory.
+
+The working branch was relabelled from `feat/bootstrap-3` to `claude/bootstrap-vteuud` at commit `e6f1336`. Both labels pointed at identical trees, so no accepted stage output changed. Later runs must use the working branch named above.
 
 ## Local supplied books
 
@@ -99,7 +102,7 @@ Before completing each stage, re-read the original requirements, inspect actual 
 
 ## Commit and remote rule
 
-Use one commit per completed stage and include the stage identifier in the commit message. Push every completed stage commit to `origin/feat/bootstrap-3`, verify the remote branch points to that commit, then continue automatically.
+Use one commit per completed stage and include the stage identifier in the commit message. Push every completed stage commit to `origin/claude/bootstrap-vteuud`, verify the remote branch points to that commit, then continue automatically.
 
 ## Context rule
 
@@ -108,7 +111,7 @@ Reconstruct every stage from:
 ```text
 governing bootstrap specification
 +
-accepted prior-stage outputs on feat/bootstrap-3
+accepted prior-stage outputs on the working branch
 +
 this execution contract
 +
